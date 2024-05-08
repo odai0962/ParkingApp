@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@drawable/dialog_border"
+    android:backgroundTint="@null"
+    android:layout_centerHorizontal="true"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+ <TextView
+     android:layout_centerHorizontal="true"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Your account has been \n created successfully"
+     android:textColor="@color/lightGreen"
+     android:textStyle="bold"
+     android:textSize="24sp"
+     android:id="@+id/doneText"
+     android:textAlignment="center"
+     ></TextView>
+ <ImageView
+     android:layout_marginTop="16dp"
+     android:layout_centerHorizontal="true"
+     android:layout_below="@+id/doneText"
+     android:layout_width="100dp"
+     android:layout_height="100dp"
+     android:id="@+id/imagecheck"
+     android:src="@drawable/check"
+     ></ImageView>
+ <Button
+     android:layout_marginTop="32dp"
+     android:layout_below="@+id/imagecheck"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginHorizontal="32dp"
+     android:background="@drawable/buttonborder1"
+     android:textStyle="bold"
+     android:textSize="18dp"
+     android:textColor="@color/white"
+     android:text="Back to login"
+     android:backgroundTint="@null"
+     android:id="@+id/closeButton"
+ />
+
+
+ </RelativeLayout>
+

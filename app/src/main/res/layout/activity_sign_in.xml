@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Goldenrod"
+    tools:context=".SignIn">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/viewborder"
+        android:id="@+id/view"
+        ></View>
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:src="@drawable/bau_logo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/image_logo"
+        ></ImageView>
+    <TextView
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/MainGreen"
+        android:layout_below="@id/image_logo"
+        android:text="Sign In"
+        android:id="@+id/textSignIn"
+        >
+    </TextView>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in to be able to reserve \n parking"
+        android:textColor="@color/black"
+        android:layout_below="@+id/textSignIn"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="16sp"
+        android:id="@+id/SignInDescription"
+        ></TextView>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:backgroundTint="@null"
+        android:backgroundTint="@null"
+        android:background="@drawable/cardborder"
+        android:layout_below="@+id/SignInDescription"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:backgroundTint="@null"
+            android:backgroundTint="@null"
+            android:background="@drawable/cardborder"
+            android:layout_height="300dp">
+
+            <EditText
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborder1"
+                android:hint="Student ID"
+                android:textColorHint="@color/MainGreen"
+                android:padding="16dp"
+                android:id="@+id/ETSI"
+                ></EditText>
+            <EditText
+                android:layout_below="@+id/ETSI"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborder1"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/MainGreen"
+                android:padding="16dp"
+                android:id="@+id/ETP"
+                ></EditText>
+
+            <Button
+                android:layout_above="@+id/ForgetPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signinButton"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="Sign In"
+                android:textColor="@color/MainGreen"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:background="@drawable/buttonborder1"
+                app:backgroundTint="@null"
+                android:backgroundTint="@null"
+                ></Button>
+
+            <TextView
+                android:padding="16dp"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forget Password ?"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/Cream"
+                android:id="@+id/ForgetPassword" />
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

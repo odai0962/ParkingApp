@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- FrameLayout to hold the content of each page -->
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        android:layout_above="@+id/navigation"/>
+
+    <!-- BottomNavigationView for button navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="@color/white"
+        app:itemPaddingBottom="10dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        app:itemIconTint="@color/MainGreen"
+        app:itemTextColor="@color/MainGreen"/>
+
+</RelativeLayout>
+

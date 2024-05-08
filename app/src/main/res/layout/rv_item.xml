@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        app:cardCornerRadius="15dp"
+
+        >
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/carmodelborder"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            >
+
+            <ImageView
+                android:id="@+id/carimage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/carim"
+                android:layout_marginRight="16dp"
+                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="car model"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/carmodeltext"
+                android:textSize="24sp"
+                android:layout_toRightOf="@+id/carimage"
+                android:layout_marginTop="16dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:id="@+id/parkingNum"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/Red"
+
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/carimage"
+                android:layout_below="@+id/carmodeltext"
+                android:layout_marginTop="8dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 parking left"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/carimage"
+                android:layout_below="@+id/carmodeltext"
+                android:layout_marginTop="8dp"
+                ></TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParkingLotC">
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/parkinglotborder" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parking C"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/TextParkingC"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car model"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@+id/TextParkingC"
+        android:layout_centerHorizontal="true"
+        ></TextView>
+    <ImageButton
+        android:padding="8dp"
+        android:contentDescription="arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="false"
+        android:src="@drawable/left_arrow"
+        android:scaleType="fitStart"
+        android:id="@+id/leftClickArrowC"
+        android:background="@drawable/circular_background"
+        android:clipToOutline="true"
+        android:layout_alignBottom="@+id/view"
+        android:layout_toLeftOf="@+id/TextParkingC"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <ImageButton
+
+        android:padding="8dp"
+        android:contentDescription="arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="false"
+        android:src="@drawable/right_arrow"
+        android:scaleType="fitStart"
+        android:id="@+id/rightClickArrowC"
+        android:background="@drawable/circular_backgroundstop"
+        android:clipToOutline="true"
+        android:layout_alignBottom="@+id/view"
+        android:layout_toRightOf="@+id/TextParkingC"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0-30"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24sp"
+        ></TextView>
+
+    <ScrollView
+        android:layout_below="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/frameButtonC"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/leftRecyclerViewC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                app:fastScrollEnabled="false" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/centerRecyclerViewC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_centerHorizontal="true"
+                app:fastScrollEnabled="false" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RightRecyclerViewC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_alignParentEnd="true"
+                app:fastScrollEnabled="false" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <FrameLayout
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackt"
+        android:id="@+id/frameButtonC"
+        >
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:id="@+id/NextButtonC"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/nextborder"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            />
+    </FrameLayout>
+
+
+</RelativeLayout>

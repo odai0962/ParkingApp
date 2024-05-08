@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/Goldenrod"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/viewborder"
+        android:id="@+id/view"
+        ></View>
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:src="@drawable/bau_logo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/image_logo"
+        ></ImageView>
+    <TextView
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/MainGreen"
+        android:layout_below="@id/image_logo"
+        android:text="Sign Up"
+        android:id="@+id/textSignUp"
+        >
+    </TextView>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in to be able to reserve \n parking"
+        android:textColor="@color/black"
+        android:layout_below="@+id/textSignUp"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="16sp"
+        android:id="@+id/SignInDescription"
+        ></TextView>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:backgroundTint="@null"
+        android:backgroundTint="@null"
+        android:background="@drawable/cardborder"
+        android:layout_below="@+id/SignInDescription"
+        >
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            app:backgroundTint="@null"
+            android:backgroundTint="@null"
+            android:background="@drawable/cardborder"
+            android:layout_height="380dp">
+
+
+
+               <EditText
+                     android:layout_marginTop="32dp"
+                  android:layout_marginLeft="32dp"
+                   android:id="@+id/Fname"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColorHint="@color/MainGreen"
+                   android:background="@drawable/buttonborder1"
+                   android:hint="First name"
+                   android:padding="16dp" />
+
+               <EditText
+
+                   android:layout_marginTop="32dp"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="32dp"
+                   android:id="@+id/Lname"
+                   android:layout_width="wrap_content"
+                   android:textColorHint="@color/MainGreen"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/buttonborder1"
+                   android:hint="Last name"
+                   android:padding="16dp" />
+
+
+
+
+            <EditText
+                android:inputType="number"
+                android:layout_below="@+id/Fname"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborder1"
+                android:hint="phone number"
+                android:textColorHint="@color/MainGreen"
+                android:padding="16dp"
+                android:id="@+id/ETSI"
+                ></EditText>
+
+            <EditText
+                android:layout_below="@+id/ETSI"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborder1"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/MainGreen"
+                android:padding="16dp"
+                android:id="@+id/ETP" />
+
+            <Button
+               android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:id="@+id/signUpNextButton1"
+                android:text="Next"
+                android:textColor="@color/MainGreen"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:background="@drawable/buttonborder1"
+                app:backgroundTint="@null"
+                android:backgroundTint="@null"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="32dp"
+                ></Button>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
