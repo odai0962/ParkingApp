@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Notifications">
+
+    <ImageView
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        android:padding="16dp"
+        android:clickable="true"
+        android:contentDescription="backArrowNotifications"
+        />
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TextNotifications"
+        />
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Common"
+        android:textSize="16dp"
+        android:id="@+id/Common"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/TextNotifications"
+        ></TextView>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/GeneralNotification"
+        android:layout_below="@+id/Common">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Notification"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:id="@+id/GeneralNotificationText"
+            ></TextView>
+
+        <Switch
+
+            android:clickable="true"
+            android:id="@+id/GeneralSwitchButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/relativeSound"
+        android:layout_below="@+id/GeneralNotification">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sound"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:id="@+id/SoundText"
+            android:layout_centerVertical="true"
+            ></TextView>
+
+        <Switch
+            android:clickable="true"
+            android:id="@+id/SoundSwitchButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="System &amp; services update"
+        android:textSize="16dp"
+        android:id="@+id/servicesUpdate"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/relativeSound"
+        ></TextView>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/AppUpdates"
+        android:layout_below="@+id/servicesUpdate">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Notification"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:id="@+id/servicesUpdateText"
+            ></TextView>
+
+        <Switch
+
+            android:clickable="true"
+            android:id="@+id/servicesUpdateSwitchButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

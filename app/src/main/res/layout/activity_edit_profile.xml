@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".EditProfile">
+   <ImageButton
+       android:contentDescription="backArrowEditProfile"
+       android:padding="16dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/baseline_arrow_back_ios_new_24"
+       android:id="@+id/backArrowEditProfile"
+      />
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TextEditProfile"
+
+        ></TextView>
+    <RelativeLayout
+        android:id="@+id/relativeProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextEditProfile"
+        android:layout_centerHorizontal="true"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/profileimage"
+            android:layout_marginTop="16dp"
+            app:civ_border_width="1dp"
+            android:id="@+id/profileimage"
+           />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/edit_image"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:padding="10dp"
+            android:layout_alignBottom="@+id/profileimage"
+            android:layout_alignRight="@+id/profileimage"
+
+            android:contentDescription="edit_image"
+            ></ImageView>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_below="@+id/relativeProfileImage"
+        android:id="@+id/username"
+        />
+    <EditText
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="odai zagha"
+        android:id="@+id/NameEdit"
+        android:layout_below="@+id/username"
+        android:background="@drawable/edit_text_border"
+        android:backgroundTint="@null"
+        android:layout_marginHorizontal="16dp"
+        android:padding="16dp"
+        ></EditText>
+
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_below="@+id/NameEdit"
+        android:id="@+id/useremail"
+        />
+    <EditText
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Odai.zagha0962@gmail.com"
+        android:layout_below="@+id/useremail"
+        android:background="@drawable/edit_text_border"
+        android:backgroundTint="@null"
+        android:id="@+id/EditEmail"
+        android:layout_marginHorizontal="16dp"
+        android:padding="16dp"
+        ></EditText>
+
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_below="@+id/EditEmail"
+        android:id="@+id/userPassword"
+        />
+    <EditText
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="odai0962"
+        android:layout_below="@+id/userPassword"
+        android:background="@drawable/edit_text_border"
+        android:backgroundTint="@null"
+        android:id="@+id/EditPassword"
+        android:layout_marginHorizontal="16dp"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        ></EditText>
+
+    <Button
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/EditPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:background="@drawable/nextborder"
+        android:backgroundTint="@null"
+        app:backgroundTint="@null"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ButtonSaveChanges"
+        ></Button>
+
+
+
+
+</RelativeLayout>
