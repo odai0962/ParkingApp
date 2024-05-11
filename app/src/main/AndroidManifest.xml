@@ -19,13 +19,13 @@
             android:name=".ParkingLotB"
             android:exported="false" />
         <activity
+            android:name=".ParkingLot"
+            android:exported="false" />
+        <activity
+            android:name=".MainPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainHomePage"
-            android:exported="false" />
-        <activity
-            android:name=".Settings"
             android:exported="false" />
         <activity
             android:name=".Archive"
@@ -34,7 +34,7 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".MainPage"
+            android:name=".Settings"
             android:exported="false" />
         <activity
             android:name=".SignUp3"
@@ -49,7 +49,7 @@
             android:name=".SignIn"
             android:exported="false" />
         <activity
-            android:name=".ParkingLot"
+            android:name=".MainHomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

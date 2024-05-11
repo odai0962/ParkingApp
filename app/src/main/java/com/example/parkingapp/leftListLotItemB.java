@@ -1,7 +1,7 @@
 package com.example.parkingapp;
 
 public class leftListLotItemB {
-    private  String ParkingNumB ;
+    private  String ParkingNumB  ;
     private  int ImageParkingLotB;
 
     public leftListLotItemB(String parkingNumB, int imageParkingLotB) {

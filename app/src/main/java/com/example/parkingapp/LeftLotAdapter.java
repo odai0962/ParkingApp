@@ -15,7 +15,6 @@ import java.util.List;
 
 public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftViewHolder> {
         List<leftListLotItem> leftList;
-
         LeftItemClickListenerA clickListenerA;
         public void setLeftClickListenerA(LeftItemClickListenerA clickListenerA){
             this.clickListenerA = clickListenerA;

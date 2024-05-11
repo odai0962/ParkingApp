@@ -7,8 +7,9 @@
     <color name="Goldenrod">#ECCD92</color>
     <color name="Red">#FF3225</color>
     <color name="Grey">#BFB5B5</color>
-    <color name="Swhite">#74FFFFFF</color>
+    <color name="lightGrey">#E5E7E9</color>
     <color name="lightGreen">#699F4C</color>
     <color name="blackt">#80000000</color>
+    <color name="MainGreent">#802B7F50</color>
 
 </resources>

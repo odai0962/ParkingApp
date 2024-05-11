@@ -1,14 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TextSettings"
+        android:layout_marginTop="32dp"
+        ></TextView>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/TextAccount"
+        android:layout_below="@+id/TextSettings"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+
+        ></TextView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/TextAccount"
+        android:background="@drawable/setting_border"
+        android:backgroundTint="@null"
+        android:padding="16dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeEditProfile">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/user"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageEditProfile"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit profile"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageEditProfile"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeEditProfile"
+                android:id="@+id/relativeSecurity"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/verified"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageSecurity"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Security"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageSecurity"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/relativeSecurity"
+                android:id="@+id/relativeNotifications"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/baseline_notifications_none_24"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageNotifications"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit profile"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageNotifications"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeNotifications"
+                android:id="@+id/Privacy"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/padlock"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImagePrivacy"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImagePrivacy"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/TextSupportAbout"
+        android:layout_below="@+id/TextSettings"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+
+        ></TextView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/TextSupportAbout"
+        android:background="@drawable/setting_border"
+        android:backgroundTint="@null"
+        android:padding="16dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeEditProfile">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/user"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageEditProfile"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit profile"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageEditProfile"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeEditProfile"
+                android:id="@+id/relativeSecurity"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/verified"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageSecurity"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Security"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageSecurity"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/relativeSecurity"
+                android:id="@+id/relativeNotifications"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/baseline_notifications_none_24"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImageNotifications"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit profile"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImageNotifications"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeNotifications"
+                android:id="@+id/Privacy"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/padlock"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ImagePrivacy"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ImagePrivacy"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    ></TextView>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>
