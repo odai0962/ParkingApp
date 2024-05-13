@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermsAndConditions">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/parkinglotborder"
+        android:id="@+id/view"
+        />
+
+    <ImageView
+        android:layout_margin="16dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        android:padding="12dp"
+        android:clickable="true"
+        android:contentDescription="backArrowTermsAndConditions"
+        />
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms and Conditions"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TextTermsAndConditions"
+        />
+    <FrameLayout
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view"
+        android:layout_above="@+id/frameLetsPark"
+        android:background="@color/lightGrey"
+        android:padding="16dp"
+        >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:layout_marginTop="16dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="if the car is left in the parking lot for more than 12 hours , an additional fee will be paid as rent for another day."
+               android:textStyle="bold"
+               android:textSize="18sp"
+               android:textColor="@color/black"
+               android:id="@+id/Terms1"
+               />
+           <TextView
+               android:layout_marginTop="32dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="if the car is left in the parking lot for more than 12 hours , an additional fee will be paid as rent for another day."
+               android:textStyle="bold"
+               android:textSize="18sp"
+               android:textColor="@color/black"
+               android:id="@+id/Terms2"
+               android:layout_below="@+id/Terms1"
+               />
+           <CheckBox
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Read &amp; Accept"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentEnd="true"
+           />
+
+       </RelativeLayout>
+
+    </FrameLayout>
+
+
+
+    <FrameLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackt"
+        android:id="@+id/frameLetsPark"
+
+        >
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="let’s park"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:id="@+id/ButtonLetsPark"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/nextborder"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            />
+    </FrameLayout>
+</RelativeLayout>

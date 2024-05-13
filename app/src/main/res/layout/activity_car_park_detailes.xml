@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarParkDetailes">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="scrollDetailes"
+        android:id="@+id/DetailesScroll"
+        android:layout_above="@+id/frameButtonNext"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/parkinglotborder"
+                android:id="@+id/view"
+                />
+
+            <ImageView
+                android:layout_margin="16dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                android:padding="12dp"
+                android:clickable="true"
+                android:contentDescription="backArrowCarParkDetailes"
+                />
+            <TextView
+                android:layout_marginTop="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Park Detailes"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/TextCarParkDetailes"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/edit_text_border"
+                android:padding="16dp"
+                android:id="@+id/frameCar"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/carimage"
+                        android:layout_width="88dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/carim" />
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="car model"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/Grey"
+                        android:id="@+id/carModel"
+                        />
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/carModel"
+                        android:layout_toRightOf="@+id/carimage"
+                        android:layout_marginLeft="16dp"
+                        android:text="car ID: "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/Grey"
+                        android:id="@+id/carid"
+                        />
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/carModel"
+                        android:layout_toRightOf="@+id/carid"
+                        android:layout_marginLeft="8dp"
+                        android:text="32001002502"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+
+                        />
+
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/carid"
+                        android:layout_toRightOf="@+id/carimage"
+                        android:layout_marginLeft="16dp"
+                        android:text="Car Color : "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/Grey"
+                        android:id="@+id/carcolor"
+                        />
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/carid"
+                        android:layout_toRightOf="@+id/carcolor"
+                        android:layout_marginLeft="8dp"
+                        android:text="red"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignBottom="@+id/carcolor"
+                        android:src="@drawable/swap"
+                        android:scaleType="fitCenter"
+                        android:padding="12dp"
+                        android:contentDescription="switch car"
+                        android:clickable="true"
+                        ></ImageView>
+
+
+                </RelativeLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frameCar"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/edit_text_border"
+                android:padding="16dp"
+                android:id="@+id/frameTimeDuration"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time Duration"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/Grey"
+                        android:id="@+id/TimeDuration"
+                        />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/TimeDuration"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/edit_text_border"
+                        android:padding="8dp"
+                        android:id="@+id/frameFrom"
+                        >
+                        <RelativeLayout
+                            android:padding="8dp"
+                            android:clickable="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/fromTimePiker"
+                            >
+                            <TextView
+                                android:layout_centerVertical="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="From: "
+                                android:textColor="@color/Grey"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/From"
+                                android:letterSpacing="0.1"
+                                />
+
+                            <TextView
+                                android:layout_marginLeft="32dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="07:30"
+                                android:textStyle="bold"
+                                android:textSize="24sp"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:id="@+id/time"
+                                android:letterSpacing="0.1"
+                                android:layout_centerVertical="true"
+                                ></TextView>
+
+                            <ImageView
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="32dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/event"
+                                ></ImageView>
+                        </RelativeLayout>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/frameFrom"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/edit_text_border"
+                        android:padding="8dp"
+                        >
+                        <RelativeLayout
+                            android:padding="8dp"
+                            android:clickable="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ToTimePiker"
+                            >
+                            <TextView
+                                android:layout_centerVertical="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="To: "
+                                android:textColor="@color/Grey"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/To"
+                                android:letterSpacing="0.1"
+                                />
+
+                            <TextView
+                                android:layout_marginLeft="32dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="07:30"
+                                android:textStyle="bold"
+                                android:textSize="24sp"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@color/black"
+                                android:textAlignment="center"
+                                android:id="@+id/Totime"
+                                android:letterSpacing="0.1"
+                                android:layout_centerVertical="true"
+                                ></TextView>
+
+                            <ImageView
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="32dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/event"
+                                ></ImageView>
+                        </RelativeLayout>
+                    </FrameLayout>
+
+
+
+
+
+
+
+
+                </RelativeLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frameTimeDuration"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/edit_text_border"
+                android:padding="16dp"
+                android:id="@+id/frameCarDetailes"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CarPark Detailes"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/Grey"
+                        android:id="@+id/Detailes"
+                        />
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/Detailes"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/parkinglotright"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/imageDetailes"
+                        ></ImageView>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Parking set : "
+                       android:textAlignment="center"
+                       android:textColor="@color/Grey"
+                       android:textSize="18sp"
+                       android:textStyle="bold"
+                       android:layout_marginTop="16dp"
+                       android:layout_below="@+id/Detailes"
+                       android:id="@+id/parkingSet"
+                       />
+                   <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        android:textAlignment="center"
+                        android:textColor="@color/MainGreen"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@+id/parkingSet"
+                        android:layout_below="@+id/Detailes"
+                        android:id="@+id/parkingSetData"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking Num :"
+                        android:textAlignment="center"
+                        android:textColor="@color/Grey"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_below="@+id/parkingSet"
+                        android:id="@+id/ParkingNum"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C07"
+                        android:textAlignment="center"
+                        android:textColor="@color/MainGreen"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@+id/ParkingNum"
+                        android:layout_below="@+id/parkingSetData"
+                        android:id="@+id/ParkingNumData"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking cost : "
+                        android:textAlignment="center"
+                        android:textColor="@color/Grey"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_below="@+id/ParkingNumData"
+                        android:id="@+id/Bookingcost"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 jd"
+                        android:textAlignment="center"
+                        android:textColor="@color/MainGreen"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@+id/Bookingcost"
+                        android:layout_below="@+id/ParkingNumData"
+                        android:id="@+id/BookingcostData"
+                        />
+                    <ImageView
+                        android:contentDescription="switchParking"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:src="@drawable/swap"
+                        android:scaleType="fitCenter"
+                        android:padding="8dp"
+                        android:layout_below="@+id/imageDetailes"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blackt"
+        android:id="@+id/frameButtonNext"
+        >
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:id="@+id/NextButtonDetailes"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/nextborder"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            />
+    </FrameLayout>
+</RelativeLayout>

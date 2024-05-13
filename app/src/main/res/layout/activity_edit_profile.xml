@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".EditProfile">
-   <ImageButton
+   <ImageView
+       android:clickable="true"
        android:contentDescription="backArrowEditProfile"
        android:padding="16dp"
        android:layout_width="wrap_content"

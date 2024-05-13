@@ -103,8 +103,15 @@
 
     </RelativeLayout>
 
-
+    <View
+        android:layout_below="@+id/relativeSound"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/line1"
+        android:background="@color/Grey" />
     <TextView
+
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,7 +120,7 @@
         android:id="@+id/servicesUpdate"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_below="@+id/relativeSound"
+        android:layout_below="@+id/line1"
         ></TextView>
     <RelativeLayout
         android:layout_marginTop="16dp"

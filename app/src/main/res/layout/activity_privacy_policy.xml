@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".PrivacyPolicy">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:padding="16dp"
+            android:clickable="true"
+            android:contentDescription="backArrowPrivacyPolicy"
+            />
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/TextPrivacyPolicy"
+            />
+
+        <TextView
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Types data we collect"
+            android:textSize="16dp"
+            android:id="@+id/TypeDataText"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/TextPrivacyPolicy"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/TypeDataText"
+            android:id="@+id/TypeDataDescription"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+            />
+
+        <TextView
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Use of your personal data"
+            android:textSize="16dp"
+            android:id="@+id/personaldataText"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/TypeDataDescription"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/personaldataText"
+            android:id="@+id/personalDataDescription"
+            android:text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+            />
+
+        <TextView
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Disclosure of your personal data"
+            android:textSize="16dp"
+            android:id="@+id/DisclosureText"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/personalDataDescription"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/DisclosureText"
+            android:id="@+id/DisclosureDescription"
+            android:text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus"
+            />
+
+    </RelativeLayout>
+</ScrollView>

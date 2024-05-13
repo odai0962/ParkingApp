@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Language">
+
+    <ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/baseline_arrow_back_ios_new_24"
+    android:padding="16dp"
+    android:clickable="true"
+    android:contentDescription="backArrowLanguage"
+    />
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TextLanguage"
+        />
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suggested"
+        android:textSize="16dp"
+        android:id="@+id/Suggested"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/TextLanguage"
+        ></TextView>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/SuggestedRadioGroup"
+        android:layout_below="@+id/Suggested"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EnglishRadioButton"
+                >
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English (US)"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/EnglishRadioButton"
+                >
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arabic  (AR)"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+
+    </RadioGroup>
+    <View
+        android:layout_below="@+id/SuggestedRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/Grey" />
+
+
+</RelativeLayout>
