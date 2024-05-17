@@ -114,7 +114,6 @@
                 android:text="Forget Password ?"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-
                 android:textColor="@color/Cream"
                 android:id="@+id/ForgetPassword" />
 

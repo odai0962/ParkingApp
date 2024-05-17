@@ -6,140 +6,210 @@
     android:background="@color/Goldenrod"
     android:layout_height="match_parent"
     tools:context=".SignUp">
-    <View
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/viewborder"
-        android:id="@+id/view"
-        ></View>
-    <ImageView
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:src="@drawable/bau_logo"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/image_logo"
-        ></ImageView>
-    <TextView
-        android:layout_marginHorizontal="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/MainGreen"
-        android:layout_below="@id/image_logo"
-        android:text="Sign Up"
-        android:id="@+id/textSignUp"
-        >
-    </TextView>
-    <TextView
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sign in to be able to reserve \n parking"
-        android:textColor="@color/black"
-        android:layout_below="@+id/textSignUp"
-        android:layout_marginHorizontal="16dp"
-        android:textSize="16sp"
-        android:id="@+id/SignInDescription"
-        ></TextView>
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        app:backgroundTint="@null"
-        android:backgroundTint="@null"
-        android:background="@drawable/cardborder"
-        android:layout_below="@+id/SignInDescription"
-        >
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
         <RelativeLayout
-
             android:layout_width="match_parent"
-            app:backgroundTint="@null"
-            android:backgroundTint="@null"
-            android:background="@drawable/cardborder"
-            android:layout_height="380dp">
+            android:layout_height="wrap_content">
 
-
-
-               <EditText
-                     android:layout_marginTop="32dp"
-                  android:layout_marginLeft="32dp"
-                   android:id="@+id/Fname"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textColorHint="@color/MainGreen"
-                   android:background="@drawable/buttonborder1"
-                   android:hint="First name"
-                   android:padding="16dp" />
-
-               <EditText
-
-                   android:layout_marginTop="32dp"
-                   android:layout_alignParentRight="true"
-                   android:layout_marginRight="32dp"
-                   android:id="@+id/Lname"
-                   android:layout_width="wrap_content"
-                   android:textColorHint="@color/MainGreen"
-                   android:layout_height="wrap_content"
-                   android:background="@drawable/buttonborder1"
-                   android:hint="Last name"
-                   android:padding="16dp" />
-
-
-
-
-            <EditText
-                android:drawableStart="@drawable/baseline_phone"
-                android:drawablePadding="16dp"
-                android:inputType="number"
-                android:layout_below="@+id/Fname"
-                android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonborder1"
-                android:hint="phone number"
-                android:textColorHint="@color/MainGreen"
-                android:padding="16dp"
-                android:id="@+id/ETSI"
-                ></EditText>
+                android:layout_height="300dp"
+                android:background="@drawable/viewborder"
+                android:id="@+id/view"
+                ></View>
 
-            <EditText
-                android:drawableStart="@drawable/baseline_email"
-                android:drawablePadding="16dp"
-                android:layout_below="@+id/ETSI"
+            <ImageView
                 android:layout_marginTop="16dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonborder1"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/MainGreen"
-                android:padding="16dp"
-                android:id="@+id/ETP" />
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:src="@drawable/bau_logo"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/image_logo"
+                ></ImageView>
 
-            <Button
-               android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_width="180dp"
+            <TextView
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:id="@+id/signUpNextButton1"
-                android:text="Next"
-                android:textColor="@color/MainGreen"
-                android:textStyle="bold"
                 android:textSize="24sp"
-                android:background="@drawable/buttonborder1"
+                android:textStyle="bold"
+                android:textColor="@color/MainGreen"
+                android:layout_below="@id/image_logo"
+                android:text="Sign Up"
+                android:id="@+id/textSignUp"
+                >
+            </TextView>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sign in to be able to reserve \n parking"
+                android:textColor="@color/black"
+                android:layout_below="@+id/textSignUp"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="16sp"
+                android:id="@+id/SignInDescription"
+                ></TextView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
                 app:backgroundTint="@null"
                 android:backgroundTint="@null"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="32dp"
-                ></Button>
+                android:background="@drawable/cardborder"
+                android:layout_below="@+id/SignInDescription"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    app:backgroundTint="@null"
+                    android:backgroundTint="@null"
+                    android:background="@drawable/cardborder"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_marginTop="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:id="@+id/Fname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/MainGreen"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="First name"
+                        android:padding="16dp" />
+
+                    <EditText
+                        android:layout_marginTop="32dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="32dp"
+                        android:id="@+id/Lname"
+                        android:layout_width="wrap_content"
+                        android:textColorHint="@color/MainGreen"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="Last name"
+                        android:padding="16dp" />
+
+                    <EditText
+                        android:drawableStart="@drawable/baseline_phone"
+                        android:drawablePadding="16dp"
+                        android:inputType="number"
+                        android:layout_below="@+id/Fname"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="phone number"
+                        android:textColorHint="@color/MainGreen"
+                        android:padding="16dp"
+                        android:id="@+id/editPhone"
+                        ></EditText>
+
+                    <EditText
+                        android:drawableStart="@drawable/baseline_email"
+                        android:drawablePadding="16dp"
+                        android:layout_below="@+id/editPhone"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/MainGreen"
+                        android:padding="16dp"
+                        android:id="@+id/editEmail" />
+                    <EditText
+                        android:layout_below="@+id/editEmail"
+                        android:drawableStart="@drawable/baseline_perm_identity_24"
+                        android:drawablePadding="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="Student ID"
+                        android:textColorHint="@color/MainGreen"
+                        android:padding="16dp"
+                        android:inputType="number"
+                        android:id="@+id/editStudentID"
+                        ></EditText>
+                    <EditText
+                        android:drawableStart="@drawable/baseline_lock_24"
+                        android:drawablePadding="16dp"
+                        android:layout_below="@+id/editStudentID"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="Password"
+                        android:textColorHint="@color/MainGreen"
+                        android:padding="16dp"
+                        android:id="@+id/editPassword"
+                        ></EditText>
+                    <EditText
+                        android:drawableStart="@drawable/baseline_lock_24"
+                        android:drawablePadding="16dp"
+                        android:layout_below="@+id/editPassword"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/buttonborder1"
+                        android:hint="Confirm Password"
+                        android:textColorHint="@color/MainGreen"
+                        android:padding="16dp"
+                        android:id="@+id/editConfirmPassword" />
+
+
+                    <Button
+                        android:layout_below="@+id/editConfirmPassword"
+
+                        android:layout_alignParentRight="true"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:id="@+id/signUpNextButton"
+                        android:text="Next"
+                        android:textColor="@color/MainGreen"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:background="@drawable/buttonborder1"
+                        app:backgroundTint="@null"
+                        android:backgroundTint="@null"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="75dp"
+                        ></Button>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/signUpNextButton"
+                       android:text="I Have Account"
+                       android:textSize="18sp"
+                       android:layout_centerHorizontal="true"
+                       android:textColor="@color/white"
+                       android:clickable="true"
+                       android:layout_marginBottom="30dp"
+                       android:id="@+id/nextLoginButton"
+                       ></TextView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
+
 </RelativeLayout>
