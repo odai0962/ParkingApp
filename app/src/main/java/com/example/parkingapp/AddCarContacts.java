@@ -14,8 +14,8 @@ public class AddCarContacts {
     @ColumnInfo(name = "car_color")
     private  String Color;
 
-    public AddCarContacts(int ID, String type, String color) {
-        this.ID = ID;
+    public AddCarContacts( String type, String color) {
+
         Type = type;
         Color = color;
     }

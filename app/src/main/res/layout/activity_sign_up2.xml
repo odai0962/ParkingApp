@@ -64,7 +64,8 @@
 
 
             <EditText
-
+                android:drawableStart="@drawable/baseline_perm_identity_24"
+                android:drawablePadding="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_width="match_parent"
@@ -81,6 +82,8 @@
 
 
             <EditText
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="16dp"
                 android:layout_below="@+id/StudentID"
                 android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="16dp"
@@ -94,6 +97,8 @@
                 ></EditText>
 
             <EditText
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="16dp"
                 android:layout_below="@+id/Password"
                 android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="16dp"

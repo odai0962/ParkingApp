@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.parkingapp.AddCarModel;
@@ -41,27 +42,43 @@ public class HomeFragment extends Fragment   {
         fragmentHomeBinding.setClickHandler(clickHandler);
 
         RecyclerView recyclerView = fragmentHomeBinding.HorizontalRV;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setHasFixedSize(true);
 
-        myAdapter = new MyAdapter(addCarContactsArrayList);
+
 
         carContactsDataBase = AddCarContactsDataBase.getInstance(getContext());
 
         AddCarModel addCarModel = new ViewModelProvider(this).get(AddCarModel.class);
-        AddCarContacts addCar1 = new AddCarContacts(1,"ferrari","Red");
-        addCarModel.addNewContact(addCar1);
+
 
         addCarModel.getAllContacts().observe(getViewLifecycleOwner(), new Observer<List<AddCarContacts>>() {
             @Override
             public void onChanged(List<AddCarContacts> addCarContacts) {
+                addCarContactsArrayList.clear();
                 for (AddCarContacts c : addCarContacts) {
                     Log.v("TAGY", c.getType());
+                    addCarContactsArrayList.add(c);
                 }
+                myAdapter.notifyDataSetChanged();
             }
         });
-
+        myAdapter = new MyAdapter(addCarContactsArrayList);
         recyclerView.setAdapter(myAdapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.UP) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+              AddCarContacts c = addCarContactsArrayList.get(viewHolder.getAdapterPosition());
+              addCarModel.deleteContact(c);
+            }
+        }).attachToRecyclerView(recyclerView);
+
            return view;
     }
 

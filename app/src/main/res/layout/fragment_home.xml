@@ -111,6 +111,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="horizontal"
                 android:id="@+id/HorizontalRV"
+                android:orientation="horizontal"
                 android:layout_below="@+id/view"
                 >
 
@@ -126,7 +127,9 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="32dp"
                 android:onClick="@{clickHandler::onFABClicked}"
-                android:text="add Car"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+                android:text="add Car"
+                android:contentDescription="floatingAction"
+                />
 
         </RelativeLayout>
 
