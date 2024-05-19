@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,10 +15,10 @@ import java.util.List;
 
 public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightViewHolder> {
     private List<RightListLotItem> RightList;
-
-
-
     RightItemClickListenerA clickListenerA;
+
+    private int selectedPosition = RecyclerView.NO_POSITION;
+
     public void setRightClickListenerA(RightItemClickListenerA clickListener){
       this.clickListenerA = clickListener;
     }
@@ -31,9 +32,15 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
     @Override
     public void onBindViewHolder(@NonNull RightViewHolder holder, int position) {
        RightListLotItem rightListLotItem = RightList.get(position);
-
       holder.RightImage.setImageResource(rightListLotItem.getImageParkingLot());
       holder.RightText.setText(rightListLotItem.getParkingNum());
+
+      if (selectedPosition == position){
+          holder.carSelectedRightFrame.setVisibility(View.VISIBLE);
+      }else {
+          holder.carSelectedRightFrame.setVisibility(View.GONE);
+      }
+
     }
 
     @NonNull
@@ -59,14 +66,20 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
     public  class  RightViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
          ImageView RightImage;
          TextView RightText;
+         FrameLayout carSelectedRightFrame;
         public RightViewHolder(@NonNull View itemView) {
             super(itemView);
             RightImage = itemView.findViewById(R.id.imageLotRight);
             RightText = itemView.findViewById(R.id.RightText);
+            carSelectedRightFrame = itemView.findViewById(R.id.carSelectedRightFrame); // Initialize FrameLayout
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    int previousPosition = selectedPosition;
+                    selectedPosition = getAdapterPosition();
+                    notifyItemChanged(previousPosition); // Notify previous item to reset the visibility
+                    notifyItemChanged(selectedPosition); // Notify the current item to change the visibility
                     if (clickListenerA != null) {
                         clickListenerA.RightOnClickA(view, getAdapterPosition());
                     }

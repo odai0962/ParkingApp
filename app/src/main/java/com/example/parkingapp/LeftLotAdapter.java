@@ -16,6 +16,7 @@ import java.util.List;
 public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftViewHolder> {
     List<leftListLotItem> leftList;
     LeftItemClickListenerA clickListenerA;
+
     private int selectedPosition = RecyclerView.NO_POSITION; // to keep track of the selected item position
 
     public void setLeftClickListenerA(LeftItemClickListenerA clickListenerA){
