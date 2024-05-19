@@ -1,4 +1,5 @@
 package com.example.parkingapp;
+import android.content.Intent;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -112,6 +113,11 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
 
     @Override
     public void onClick(View v, int position) {
-        Toast.makeText(getContext(), "odai zagha", Toast.LENGTH_SHORT).show();
+        // Assuming you have a ParkingLotActivity class
+        Intent intent = new Intent(getContext(), ParkingLot.class);
+
+
+        startActivity(intent);
     }
+
 }
