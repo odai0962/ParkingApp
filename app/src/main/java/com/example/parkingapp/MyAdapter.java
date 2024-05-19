@@ -19,6 +19,11 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private ArrayList<AddCarContacts> addCarContactsArrayList;
+    private ItemCarClickListener itemCarClickListener;
+
+    public void setItemCarClickListener(ItemCarClickListener itemCarClickListener){
+        this.itemCarClickListener = itemCarClickListener;
+    }
 
     public MyAdapter(ArrayList<AddCarContacts> addCarContactsArrayList) {
         this.addCarContactsArrayList = addCarContactsArrayList;
@@ -27,8 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         AddCarContacts currentContacts = addCarContactsArrayList.get(position);
-        holder.rvItemBinding.setAddcarcontacts(currentContacts);
-
+        holder.bind(currentContacts);
     }
 
     @NonNull
@@ -40,29 +44,39 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 parent,
                 false
         );
+
         return new MyViewHolder(rvItemBinding);
     }
 
-
     @Override
     public int getItemCount() {
-          if(addCarContactsArrayList != null){
-             return addCarContactsArrayList.size();
-          }else {
-              return 0;
-          }
+        return addCarContactsArrayList.size();
     }
+
     public void setaddCarContactsArrayList(ArrayList<AddCarContacts> contacts){
-        this.addCarContactsArrayList =contacts;
+        this.addCarContactsArrayList = contacts;
         notifyDataSetChanged();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder  {
-       private RvItemBinding rvItemBinding;
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private RvItemBinding rvItemBinding;
 
-        public MyViewHolder(@NonNull  RvItemBinding rvItemBinding) {
+        public MyViewHolder(@NonNull RvItemBinding rvItemBinding) {
             super(rvItemBinding.getRoot());
             this.rvItemBinding = rvItemBinding;
+            itemView.setOnClickListener(this);
+        }
+
+        public void bind(AddCarContacts addCarContacts) {
+            rvItemBinding.setAddcarcontacts(addCarContacts);
+            rvItemBinding.executePendingBindings();
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (itemCarClickListener != null) {
+                itemCarClickListener.onClick(view, getAdapterPosition());
+            }
         }
     }
 }
