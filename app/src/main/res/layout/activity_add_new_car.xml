@@ -24,15 +24,19 @@
             android:background="@drawable/parkinglotborder"
             android:id="@+id/view"
             />
+
         <ImageView
-            android:layout_margin="16dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/baseline_arrow_back_ios_new_24"
-            android:padding="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:contentDescription="backArrowADDNEWCAR"
-            />
+            android:padding="12dp"
+            android:id="@+id/backArrowAddNewCar"
+            android:src="@drawable/baseline_arrow_back_ios_new_24" />
         <TextView
             android:layout_marginTop="32dp"
             android:layout_width="wrap_content"
@@ -124,7 +128,7 @@
                     android:paddingHorizontal="24dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edit_text_border"
-                    android:hint="16/01/2024"
+                    android:hint="car color"
                     android:id="@+id/CarColor"
                     android:inputType="text"
                     android:layout_alignParentEnd="true"
