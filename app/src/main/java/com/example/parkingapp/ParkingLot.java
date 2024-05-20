@@ -61,6 +61,14 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
         setContentView(R.layout.activity_parking_lot);
 
 
+    // Retrieve the data from the intent
+    Intent intent = getIntent();
+    int contactId = intent.getIntExtra("CONTACT_ID", 0);
+    String contactColor = intent.getStringExtra("CONTACT_COLOR");
+    String contactType = intent.getStringExtra("CONTACT_TYPE");
+    // Retrieve other details as necessary
+
+
       recyclerViewLeft = findViewById(R.id.leftRecyclerViewA);
       leftList = new ArrayList<>();
         callLeftlist();
@@ -103,10 +111,17 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
     nextButtonA.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-         Intent intent = new Intent(ParkingLot.this,CarParkDetailes.class);
-         startActivity(intent);
+        Intent intent = new Intent(ParkingLot.this, CarParkDetailes.class);
+        intent.putExtra("CONTACT_ID", contactId);
+        intent.putExtra("CONTACT_COLOR", contactColor);
+        intent.putExtra("CONTACT_TYPE", contactType);
+        Log.d("ParkingLot", "CONTACT_ID: " + contactId);
+        Log.d("ParkingLot", "CONTACT_COLOR: " + contactColor);
+        Log.d("ParkingLot", "CONTACT_TYPE: " + contactType);
+        startActivity(intent);
       }
     });
+
 
     rightLotAdapter.setRightClickListenerA(this);
     leftLotAdapter.setLeftClickListenerA(this);

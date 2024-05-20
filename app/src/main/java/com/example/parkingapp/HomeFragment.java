@@ -113,9 +113,12 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
 
     @Override
     public void onClick(View v, int position) {
+        AddCarContacts clickedContact = addCarContactsArrayList.get(position);
         // Assuming you have a ParkingLotActivity class
         Intent intent = new Intent(getContext(), ParkingLot.class);
-
+        intent.putExtra("CONTACT_ID", clickedContact.getID());
+        intent.putExtra("CONTACT_COLOR", clickedContact.getColor());
+        intent.putExtra("CONTACT_TYPE", clickedContact.getType());
 
         startActivity(intent);
     }
