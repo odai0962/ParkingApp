@@ -9,6 +9,31 @@
         android:scaleType="fitCenter"
         android:id="@+id/imageLotRightC"
         ></ImageView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/MainGreent"
+        android:visibility="gone"
+        android:id="@+id/carSelectedRightFrameC">
+
+        <TextView
+            android:layout_gravity="end|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected"
+            android:textColor="@color/Red"
+            android:textSize="12dp"
+            android:layout_margin="4dp" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/carImageReservedRightC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/car_left"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

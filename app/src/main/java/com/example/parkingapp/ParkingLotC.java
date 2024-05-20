@@ -6,14 +6,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLotC extends AppCompatActivity implements  RightItemClickListenerC ,LeftItemClickListenerC{
+public class ParkingLotC extends AppCompatActivity  implements  RightItemClickListenerC ,LeftItemClickListenerC{
+
     RecyclerView recyclerViewLeftC;
     List<leftListLotItemC> leftListC;
     LeftLotAdapterC leftLotAdapterC;
@@ -27,147 +30,169 @@ public class ParkingLotC extends AppCompatActivity implements  RightItemClickLis
     List<ArrowImageItemC> CenterlistC;
     ArrowImageAdapterC arrowImageAdapterC;
 
-    ImageButton leftClickArrowC;
-    ImageButton rightClickArrowC;
+    ImageButton LeftClickArrowC;
 
-
-    @Override
-    public void RightOnClickC(View v, int pos) {
-        Toast.makeText(this, "right lest : "+RightListC.get(pos).getParkingNumC(), Toast.LENGTH_SHORT).show();
+    public ParkingLotC() {
+        super();
     }
 
     @Override
     public void LeftOnClickC(View v, int pos) {
-        Toast.makeText(this, "right lest : "+leftListC.get(pos).getParkingNumC(), Toast.LENGTH_SHORT).show();
+        leftListLotItemC leftClickedItemC = leftListC.get(pos);
+        Log.d("OnClick", "Left RecyclerView clicked at position: " + pos);
+        Toast.makeText(this, "Left RecyclerView: " + leftClickedItemC.getParkingNumC(), Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void RightOnClickC(View v, int pos) {
+        RightListLotItemC rightClickedItemC = RightListC.get(pos);
+        Log.d("OnClick", "Right RecyclerView clicked at position: " + pos);
+        Toast.makeText(this, "Right RecyclerView: " + rightClickedItemC.getParkingNumC(), Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking_lot_c);
 
-        recyclerViewCenterC = findViewById(R.id.centerRecyclerViewC);
+
         recyclerViewLeftC = findViewById(R.id.leftRecyclerViewC);
-        recyclerViewRightC= findViewById(R.id.RightRecyclerViewC);
-
-
-        leftListC = new  ArrayList<>();
-        RightListC = new  ArrayList<>();
-        CenterlistC = new  ArrayList<>();
-
+        leftListC = new ArrayList<>();
         callLeftlistC();
-        callRightlistC();
-        callCenterListC();
-
-        leftLotAdapterC =new LeftLotAdapterC(leftListC);
-        rightLotAdapterC = new RightLotAdapterC(RightListC);
-        arrowImageAdapterC =new ArrowImageAdapterC(CenterlistC);
-
+        leftLotAdapterC = new LeftLotAdapterC(leftListC);
         recyclerViewLeftC.setAdapter(leftLotAdapterC);
-        recyclerViewCenterC.setAdapter(arrowImageAdapterC);
+        LinearLayoutManager layoutManagerC =new LinearLayoutManager(this);
+        recyclerViewLeftC.setLayoutManager(layoutManagerC);
+
+
+        recyclerViewRightC =findViewById(R.id.RightRecyclerViewC);
+        RightListC = new ArrayList<>();
+        callRightlistC();
+        rightLotAdapterC =new RightLotAdapterC(RightListC);
         recyclerViewRightC.setAdapter(rightLotAdapterC);
-
-
         LinearLayoutManager layoutManagerRightC = new LinearLayoutManager(this);
-        LinearLayoutManager layoutManagerCenterC = new LinearLayoutManager(this);
-        LinearLayoutManager layoutManagerLeftC = new LinearLayoutManager(this);
-
-
         recyclerViewRightC.setLayoutManager(layoutManagerRightC);
-        recyclerViewCenterC.setLayoutManager(layoutManagerCenterC);
-        recyclerViewLeftC.setLayoutManager(layoutManagerLeftC);
 
-        leftClickArrowC =findViewById(R.id.leftClickArrowC);
-        leftClickArrowC.setOnClickListener(new View.OnClickListener() {
+        CenterlistC = new ArrayList<>();
+        callCenterListC();
+        recyclerViewCenterC = findViewById(R.id.centerRecyclerViewC);
+        arrowImageAdapterC = new ArrowImageAdapterC(CenterlistC);
+        recyclerViewCenterC.setAdapter(arrowImageAdapterC);
+        LinearLayoutManager layoutManagerCenterC =new LinearLayoutManager(this);
+        recyclerViewCenterC.setLayoutManager(layoutManagerCenterC);
+
+
+
+        LeftClickArrowC = findViewById(R.id.leftClickArrowC);
+        LeftClickArrowC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ParkingLotC.this,ParkingLotB.class);
+                Intent intent = new Intent(ParkingLotC.this, ParkingLotB.class);
                 startActivity(intent);
             }
         });
+
+
         rightLotAdapterC.setRightClickListenerC(this);
-        leftLotAdapterC.setLeftItemClickListenerC(this);
+        leftLotAdapterC.setLeftClickListenerC(this);
 
-
+        leftLotAdapterC.setRightLotAdapterC(rightLotAdapterC);
+        rightLotAdapterC.setLeftLotAdapterC(leftLotAdapterC);
 
     }
 
+
+
     void callCenterListC(){
-        ArrowImageItemC arrowImageItemC1 = new ArrowImageItemC(R.drawable.arrowimage);
-        ArrowImageItemC arrowImageItemC2 = new ArrowImageItemC(R.drawable.arrowimage);
-        ArrowImageItemC arrowImageItemC3 = new ArrowImageItemC(R.drawable.arrowimage);
-        ArrowImageItemC arrowImageItemC4 = new ArrowImageItemC(R.drawable.arrowimage);
-        CenterlistC.add(arrowImageItemC1);
-        CenterlistC.add(arrowImageItemC2);
-        CenterlistC.add(arrowImageItemC3);
-        CenterlistC.add(arrowImageItemC4);
+        ArrowImageItemC arrowImageItem1 = new ArrowImageItemC(R.drawable.arrowimage);
+        ArrowImageItemC arrowImageItem2 = new ArrowImageItemC(R.drawable.arrowimage);
+        ArrowImageItemC arrowImageItem3 = new ArrowImageItemC(R.drawable.arrowimage);
+        ArrowImageItemC arrowImageItem4 = new ArrowImageItemC(R.drawable.arrowimage);
+        CenterlistC.add(arrowImageItem1);
+        CenterlistC.add(arrowImageItem2);
+        CenterlistC.add(arrowImageItem3);
+        CenterlistC.add(arrowImageItem4);
 
     }
 
 
     void callRightlistC(){
-        RightListLotItemC rightListLotItemC1 = new RightListLotItemC("C16",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC2 = new RightListLotItemC("C17",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC3 = new RightListLotItemC("C18",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC4 = new RightListLotItemC("C19",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC5 = new RightListLotItemC("C20",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC6 = new RightListLotItemC("C21",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC7 = new RightListLotItemC("C22",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC8 = new RightListLotItemC("C23",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC9 = new RightListLotItemC("C24",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC10 = new RightListLotItemC("C25",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC11 = new RightListLotItemC("C26",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC12 = new RightListLotItemC("C27",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC13 = new RightListLotItemC("C28",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC14 = new RightListLotItemC("C29",R.drawable.parkinglotright);
-        RightListLotItemC rightListLotItemC15 = new RightListLotItemC("C30",R.drawable.parkinglotright);
-        RightListC.add(rightListLotItemC1);
-        RightListC.add(rightListLotItemC2);
-        RightListC.add(rightListLotItemC3);
-        RightListC.add(rightListLotItemC4);
-        RightListC.add(rightListLotItemC5);
-        RightListC.add(rightListLotItemC6);
-        RightListC.add(rightListLotItemC7);
-        RightListC.add(rightListLotItemC8);
-        RightListC.add(rightListLotItemC9);
-        RightListC.add(rightListLotItemC10);
-        RightListC.add(rightListLotItemC11);
-        RightListC.add(rightListLotItemC12);
-        RightListC.add(rightListLotItemC13);
-        RightListC.add(rightListLotItemC14);
-        RightListC.add(rightListLotItemC15);
+        RightListLotItemC rightListLotItem1 = new RightListLotItemC("C16",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem2 = new RightListLotItemC("C17",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem3 = new RightListLotItemC("C18",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem4 = new RightListLotItemC("C19",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem5 = new RightListLotItemC("C20",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem6 = new RightListLotItemC("C21",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem7 = new RightListLotItemC("C22",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem8 = new RightListLotItemC("C23",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem9 = new RightListLotItemC("C24",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem10 = new RightListLotItemC("C25",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem11 = new RightListLotItemC("C26",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem12 = new RightListLotItemC("C27",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem13 = new RightListLotItemC("C28",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem14 = new RightListLotItemC("C29",R.drawable.parkinglotright);
+        RightListLotItemC rightListLotItem15 = new RightListLotItemC("C30",R.drawable.parkinglotright);
+        RightListC.add(rightListLotItem1);
+        RightListC.add(rightListLotItem2);
+        RightListC.add(rightListLotItem3);
+        RightListC.add(rightListLotItem4);
+        RightListC.add(rightListLotItem5);
+        RightListC.add(rightListLotItem6);
+        RightListC.add(rightListLotItem7);
+        RightListC.add(rightListLotItem8);
+        RightListC.add(rightListLotItem9);
+        RightListC.add(rightListLotItem10);
+        RightListC.add(rightListLotItem11);
+        RightListC.add(rightListLotItem12);
+        RightListC.add(rightListLotItem13);
+        RightListC.add(rightListLotItem14);
+        RightListC.add(rightListLotItem15);
     }
 
     void callLeftlistC(){
-        leftListLotItemC leftListLotItemC1 = new leftListLotItemC("C01",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC2 = new leftListLotItemC("C02",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC3 = new leftListLotItemC("C03",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC4 = new leftListLotItemC("C04",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC5 = new leftListLotItemC("C05",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC6 = new leftListLotItemC("C06",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC7 = new leftListLotItemC("C07",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC8 = new leftListLotItemC("C08",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC9 = new leftListLotItemC("C09",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC10 = new leftListLotItemC("C10",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC11 = new leftListLotItemC("C11",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC12 = new leftListLotItemC("C12",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC13 = new leftListLotItemC("C13",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC14 = new leftListLotItemC("C14",R.drawable.parkinglot);
-        leftListLotItemC leftListLotItemC15 = new leftListLotItemC("C15",R.drawable.parkinglot);
-        leftListC.add(leftListLotItemC1);
-        leftListC.add(leftListLotItemC2);
-        leftListC.add(leftListLotItemC3);
-        leftListC.add(leftListLotItemC4);
-        leftListC.add(leftListLotItemC5);
-        leftListC.add(leftListLotItemC6);
-        leftListC.add(leftListLotItemC7);
-        leftListC.add(leftListLotItemC8);
-        leftListC.add(leftListLotItemC9);
-        leftListC.add(leftListLotItemC10);
-        leftListC.add(leftListLotItemC11);
-        leftListC.add(leftListLotItemC12);
-        leftListC.add(leftListLotItemC13);
-        leftListC.add(leftListLotItemC14);
-        leftListC.add(leftListLotItemC15);
+        leftListLotItemC leftListLotItem1 = new leftListLotItemC("C01",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem2 = new leftListLotItemC("C02",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem3 = new leftListLotItemC("C03",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem4 = new leftListLotItemC("C04",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem5 = new leftListLotItemC("C05",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem6 = new leftListLotItemC("C06",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem7 = new leftListLotItemC("C07",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem8 = new leftListLotItemC("C08",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem9 = new leftListLotItemC("C09",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem10 = new leftListLotItemC("C10",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem11 = new leftListLotItemC("C11",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem12 = new leftListLotItemC("C12",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem13 = new leftListLotItemC("C13",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem14 = new leftListLotItemC("C14",R.drawable.parkinglot);
+        leftListLotItemC leftListLotItem15 = new leftListLotItemC("C15",R.drawable.parkinglot);
+        leftListC.add(leftListLotItem1);
+        leftListC.add(leftListLotItem2);
+        leftListC.add(leftListLotItem3);
+        leftListC.add(leftListLotItem4);
+        leftListC.add(leftListLotItem5);
+        leftListC.add(leftListLotItem6);
+        leftListC.add(leftListLotItem7);
+        leftListC.add(leftListLotItem8);
+        leftListC.add(leftListLotItem9);
+        leftListC.add(leftListLotItem10);
+        leftListC.add(leftListLotItem11);
+        leftListC.add(leftListLotItem12);
+        leftListC.add(leftListLotItem13);
+        leftListC.add(leftListLotItem14);
+        leftListC.add(leftListLotItem15);
     }
 }

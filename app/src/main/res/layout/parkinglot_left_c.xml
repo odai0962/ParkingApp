@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    android:id="@+id/LeftItemDesignC"
     android:layout_width="100dp"
-    android:layout_height="70dp">
+    android:layout_height="70dp"
+    android:background="@color/white">
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:src="@drawable/parkinglot"
         android:scaleType="fitCenter"
-        android:id="@+id/imageLotLeftC"
-        ></ImageView>
+        android:id="@+id/imageLotLeftC" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/MainGreent"
+        android:visibility="gone"
+        android:id="@+id/carSelectedLeftFrameC">
+
+        <TextView
+            android:layout_gravity="start|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected"
+            android:textColor="@color/Red"
+            android:textSize="12dp"
+            android:layout_margin="4dp" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/carImageReservedLeftC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/car_left"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +44,5 @@
         android:textStyle="bold"
         android:id="@+id/LeftTextC"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        ></TextView>
-
+        android:layout_alignParentRight="true" />
 </RelativeLayout>
