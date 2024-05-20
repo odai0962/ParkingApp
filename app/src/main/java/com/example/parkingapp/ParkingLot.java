@@ -31,6 +31,7 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
     ArrowImageAdapter arrowImageAdapter;
 
      ImageButton rightClickArrowA;
+     Button nextButtonA;
 
   public ParkingLot() {
     super();
@@ -49,16 +50,6 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
     Log.d("OnClick", "Right RecyclerView clicked at position: " + pos);
     Toast.makeText(this, "Right RecyclerView: " + rightClickedItem.getParkingNum(), Toast.LENGTH_SHORT).show();
   }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -105,6 +96,17 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
           startActivity(intent);
         }
       });
+
+
+    nextButtonA = findViewById(R.id.NextButtonA);
+
+    nextButtonA.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+         Intent intent = new Intent(ParkingLot.this,CarParkDetailes.class);
+         startActivity(intent);
+      }
+    });
 
     rightLotAdapter.setRightClickListenerA(this);
     leftLotAdapter.setLeftClickListenerA(this);
