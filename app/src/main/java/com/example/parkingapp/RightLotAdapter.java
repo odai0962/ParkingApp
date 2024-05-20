@@ -16,13 +16,15 @@ import java.util.List;
 public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightViewHolder> {
     private List<RightListLotItem> RightList;
     RightItemClickListenerA clickListenerA;
-
+    LeftLotAdapter leftLotAdapter;
     private int selectedPosition = RecyclerView.NO_POSITION;
 
     public void setRightClickListenerA(RightItemClickListenerA clickListener){
-      this.clickListenerA = clickListener;
+        this.clickListenerA = clickListener;
     }
-
+    public void setLeftLotAdapter(LeftLotAdapter leftLotAdapter) {
+        this.leftLotAdapter = leftLotAdapter;
+    }
 
 
     public RightLotAdapter(List<RightListLotItem> rightList) {
@@ -31,15 +33,15 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
 
     @Override
     public void onBindViewHolder(@NonNull RightViewHolder holder, int position) {
-       RightListLotItem rightListLotItem = RightList.get(position);
-      holder.RightImage.setImageResource(rightListLotItem.getImageParkingLot());
-      holder.RightText.setText(rightListLotItem.getParkingNum());
+        RightListLotItem rightListLotItem = RightList.get(position);
+        holder.RightImage.setImageResource(rightListLotItem.getImageParkingLot());
+        holder.RightText.setText(rightListLotItem.getParkingNum());
 
-      if (selectedPosition == position){
-          holder.carSelectedRightFrame.setVisibility(View.VISIBLE);
-      }else {
-          holder.carSelectedRightFrame.setVisibility(View.GONE);
-      }
+        if (selectedPosition == position){
+            holder.carSelectedRightFrame.setVisibility(View.VISIBLE);
+        }else {
+            holder.carSelectedRightFrame.setVisibility(View.GONE);
+        }
 
     }
 
@@ -64,9 +66,9 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
 
 
     public  class  RightViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
-         ImageView RightImage;
-         TextView RightText;
-         FrameLayout carSelectedRightFrame;
+        ImageView RightImage;
+        TextView RightText;
+        FrameLayout carSelectedRightFrame;
         public RightViewHolder(@NonNull View itemView) {
             super(itemView);
             RightImage = itemView.findViewById(R.id.imageLotRight);
@@ -80,9 +82,16 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
                     selectedPosition = getAdapterPosition();
                     notifyItemChanged(previousPosition); // Notify previous item to reset the visibility
                     notifyItemChanged(selectedPosition); // Notify the current item to change the visibility
+
+                    Log.d("RightLotAdapter", "onClick: Right item clicked");
                     if (clickListenerA != null) {
                         clickListenerA.RightOnClickA(view, getAdapterPosition());
                     }
+
+                    if (leftLotAdapter != null) {
+                        leftLotAdapter.resetSelection();
+                    }
+
                 }
             });
 
@@ -90,9 +99,14 @@ public class RightLotAdapter extends RecyclerView.Adapter<RightLotAdapter.RightV
 
         @Override
         public void onClick(View view) {
-           if(clickListenerA != null){
-               clickListenerA.RightOnClickA(view,getAdapterPosition());
-           }
+            if(clickListenerA != null){
+                clickListenerA.RightOnClickA(view,getAdapterPosition());
+            }
         }
+    }
+    public void resetSelection() {
+        int previousPosition = selectedPosition;
+        selectedPosition = RecyclerView.NO_POSITION;
+        notifyItemChanged(previousPosition);
     }
 }

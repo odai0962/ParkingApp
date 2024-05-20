@@ -109,6 +109,9 @@ public class ParkingLot extends AppCompatActivity  implements  RightItemClickLis
     rightLotAdapter.setRightClickListenerA(this);
     leftLotAdapter.setLeftClickListenerA(this);
 
+    leftLotAdapter.setRightLotAdapter(rightLotAdapter);
+    rightLotAdapter.setLeftLotAdapter(leftLotAdapter);
+
     }
 
 

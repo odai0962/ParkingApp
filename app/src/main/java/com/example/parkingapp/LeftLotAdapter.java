@@ -16,6 +16,7 @@ import java.util.List;
 public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftViewHolder> {
     List<leftListLotItem> leftList;
     LeftItemClickListenerA clickListenerA;
+    RightLotAdapter rightLotAdapter;
 
     private int selectedPosition = RecyclerView.NO_POSITION; // to keep track of the selected item position
 
@@ -25,6 +26,10 @@ public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftView
 
     public LeftLotAdapter(List<leftListLotItem> leftList) {
         this.leftList = leftList;
+    }
+
+    public void setRightLotAdapter(RightLotAdapter rightLotAdapter) {
+        this.rightLotAdapter = rightLotAdapter;
     }
 
     @NonNull
@@ -82,6 +87,16 @@ public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftView
             if (clickListenerA != null) {
                 clickListenerA.LeftOnClickA(view, getAdapterPosition());
             }
+
+            if (rightLotAdapter != null) {
+                rightLotAdapter.resetSelection();
+            }
         }
+
+    }
+    public void resetSelection() {
+        int previousPosition = selectedPosition;
+        selectedPosition = RecyclerView.NO_POSITION;
+        notifyItemChanged(previousPosition);
     }
 }
