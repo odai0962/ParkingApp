@@ -183,8 +183,10 @@
                         android:layout_below="@+id/TimeDuration"
                         android:layout_marginTop="16dp"
                         android:background="@drawable/edit_text_border"
-
                         android:id="@+id/frameFrom"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="2dp"
                         >
                         <RelativeLayout
                             android:padding="8dp"
@@ -194,6 +196,7 @@
                             android:id="@+id/fromTimePiker"
                             >
                             <TextView
+                                android:layout_marginLeft="8dp"
                                 android:layout_centerVertical="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -216,7 +219,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/black"
                                 android:textAlignment="center"
-                                android:id="@+id/time"
+                                android:id="@+id/fromTime"
                                 android:letterSpacing="0.1"
                                 android:layout_centerVertical="true"
                                 ></TextView>
@@ -237,7 +240,9 @@
                         android:layout_below="@+id/frameFrom"
                         android:layout_marginTop="16dp"
                         android:background="@drawable/edit_text_border"
-
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:id="@+id/frameTo"
                         >
                         <RelativeLayout
                             android:padding="8dp"
@@ -247,6 +252,7 @@
                             android:id="@+id/ToTimePiker"
                             >
                             <TextView
+                                android:layout_marginLeft="8dp"
                                 android:layout_centerVertical="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -269,7 +275,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/black"
                                 android:textAlignment="center"
-                                android:id="@+id/Totime"
+                                android:id="@+id/toTime"
                                 android:letterSpacing="0.1"
                                 android:layout_centerVertical="true"
                                 ></TextView>
