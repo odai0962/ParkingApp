@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -17,7 +18,8 @@ import java.util.Calendar;
 public class CarParkDetailes extends AppCompatActivity {
     TextView carModel, carColor, carId;
     RelativeLayout toTimePiker, fromTimePiker;
-    TextView fromTime, toTime;
+    TextView fromTime, toTime, parkingSetData, ParkingNumData;
+    Button NextButtonDetailes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,14 @@ public class CarParkDetailes extends AppCompatActivity {
         int contactId = intent.getIntExtra("CONTACT_ID", 0);
         String contactColor = intent.getStringExtra("CONTACT_COLOR");
         String contactType = intent.getStringExtra("CONTACT_TYPE");
+        String parkingSection = intent.getStringExtra("parkingSectionA");
+        String selectedLeftItem = intent.getStringExtra("SELECTED_LEFT_ITEM");
+        String selectedRightItem = intent.getStringExtra("SELECTED_RIGHT_ITEM");
         Log.d("CarParkDetailes", "CONTACT_ID: " + contactId);
         Log.d("CarParkDetailes", "CONTACT_COLOR: " + contactColor);
         Log.d("CarParkDetailes", "CONTACT_TYPE: " + contactType);
+        Log.d("CarParkDetailes", "SELECTED_LEFT_ITEM: " + selectedLeftItem);
+        Log.d("CarParkDetailes", "SELECTED_RIGHT_ITEM: " + selectedRightItem);
 
         carModel = findViewById(R.id.carModel);
         carModel.setText(contactType);
@@ -39,6 +46,16 @@ public class CarParkDetailes extends AppCompatActivity {
         carColor.setText(contactColor);
         carId = findViewById(R.id.caridText);
         carId.setText(String.valueOf(contactId));
+
+        parkingSetData = findViewById(R.id.parkingSetData);
+        ParkingNumData = findViewById(R.id.ParkingNumData);
+
+        parkingSetData.setText(parkingSection);
+        if (selectedRightItem != null) {
+            ParkingNumData.setText(selectedRightItem);
+        } else if (selectedLeftItem != null) {
+            ParkingNumData.setText(selectedLeftItem);
+        }
 
         // Time picker
         fromTime = findViewById(R.id.fromTime);
@@ -69,6 +86,15 @@ public class CarParkDetailes extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(CarParkDetailes.this, "to", Toast.LENGTH_SHORT).show();
                 openToTimeDialog();
+            }
+        });
+        NextButtonDetailes = findViewById(R.id.NextButtonDetailes);
+
+        NextButtonDetailes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(CarParkDetailes.this,TermsAndConditions.class );
+                startActivity(intent1);
             }
         });
     }
@@ -126,8 +152,6 @@ public class CarParkDetailes extends AppCompatActivity {
         pickerDialog.show();
         Log.d("CarParkDetailes", "ToTimeDialog shown");
     }
-
-
 
     // Helper method to check if ToTime is less than FromTime
     private boolean isToTimeLessThanFromTime(int selectedHour, int selectedMinute) {
