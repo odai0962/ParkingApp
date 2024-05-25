@@ -15,7 +15,7 @@ public class AddCardContent {
     private String cardName;
 
     @ColumnInfo(name = "card_number")
-    private int cardNumber;
+    private String cardNumber;
 
     @ColumnInfo(name = "unique_id")
     @PrimaryKey(autoGenerate = true)
@@ -31,12 +31,12 @@ public class AddCardContent {
         // Initialize fields with default values
         this.userName = "";
         this.cardName = "";
-        this.cardNumber = 0;
+        this.cardNumber = "";
         this.CVV = 0;
         this.expiryDate = 0;
     }
 
-    public AddCardContent(String userName, String cardName, int cardNumber, int CVV, int expiryDate) {
+    public AddCardContent(String userName, String cardName, String cardNumber, int CVV, int expiryDate) {
         this.userName = userName;
         this.cardName = cardName;
         this.cardNumber = cardNumber;
@@ -44,7 +44,7 @@ public class AddCardContent {
         this.expiryDate = expiryDate;
     }
 
-    public AddCardContent(String cardName, int cardNumber) {
+    public AddCardContent(String cardName, String cardNumber) {
         this.userName = "";
         this.cardName = cardName;
         this.cardNumber = cardNumber;
@@ -77,11 +77,11 @@ public class AddCardContent {
         this.cardName = cardName;
     }
 
-    public int getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(int cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

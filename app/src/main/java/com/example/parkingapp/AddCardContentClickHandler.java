@@ -19,7 +19,7 @@ public class AddCardContentClickHandler {
     }
 
     public void onSubmitBTNClicked(View view) {
-        if (addCardContent.getCardNumber() == -1 || addCardContent.getCardName() == null || addCardContent.getUserName() == null || addCardContent.getExpiryDate() == -1 || addCardContent.getCVV() == -1) {
+        if (addCardContent.getCardNumber() == null || addCardContent.getCardName() == null || addCardContent.getUserName() == null || addCardContent.getExpiryDate() == -1 || addCardContent.getCVV() == -1) {
             Toast.makeText(context, "Fields can't be empty", Toast.LENGTH_SHORT).show();
         } else {
             Intent i = new Intent(context, PaymentMethod.class);

@@ -63,7 +63,7 @@
                     android:id="@+id/TextCardNumber"
                     />
                 <EditText
-                    android:text="@{addCardContent.cardNumberAsString}"
+                    android:text="@{addCardContent.cardNumber}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/TextCardNumber"
