@@ -1,6 +1,5 @@
 package com.example.parkingapp;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.parkingapp.databinding.AddCardItemBinding;
 
 import java.util.ArrayList;
+
 public class AddCardAdapter extends RecyclerView.Adapter<AddCardAdapter.ContentViewHolder> {
     private ArrayList<AddCardContent> addCardContentArrayList;
     private itemCardClickListener clickListener;
@@ -67,11 +67,7 @@ public class AddCardAdapter extends RecyclerView.Adapter<AddCardAdapter.ContentV
 
         void bind(AddCardContent addCardContent, int position) {
             itemBinding.setContent(addCardContent);
-            if (selectedItemPosition == position) {
-                itemBinding.checkedCard.setVisibility(View.VISIBLE);
-            } else {
-                itemBinding.checkedCard.setVisibility(View.GONE);
-            }
+            itemBinding.checkedCard.setVisibility(selectedItemPosition == position ? View.VISIBLE : View.GONE);
             itemBinding.executePendingBindings(); // Ensure bindings are executed
         }
 

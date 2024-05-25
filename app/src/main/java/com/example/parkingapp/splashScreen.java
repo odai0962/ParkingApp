@@ -28,7 +28,7 @@ public class splashScreen extends AppCompatActivity {
                     startActivity(new Intent(splashScreen.this, MainHomePage.class));
                 } else {
                     // If user is not logged in, navigate to SignIn activity
-                    startActivity(new Intent(splashScreen.this, SignIn.class));
+                    startActivity(new Intent(splashScreen.this, MainActivity.class));
                 }
                 // Close splash screen activity
                 finish();
