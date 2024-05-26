@@ -37,7 +37,7 @@ public class ParkingLot extends AppCompatActivity implements RightItemClickListe
 
   long leftLastSelectedTime;
   long rightLastSelectedTime;
-
+  boolean isItemSelected = false; // Flag to track whether any item is selected
   public ParkingLot() {
     super();
     leftLastSelectedTime = 0;
@@ -48,6 +48,7 @@ public class ParkingLot extends AppCompatActivity implements RightItemClickListe
   public void LeftOnClickA(View v, int pos) {
     leftClickedItem = leftList.get(pos);
     leftLastSelectedTime = System.currentTimeMillis();
+    isItemSelected = true;
     Log.d("OnClick", "Left RecyclerView clicked at position: " + pos);
     Toast.makeText(this, "Left RecyclerView: " + leftClickedItem.getParkingNum(), Toast.LENGTH_SHORT).show();
   }
@@ -56,6 +57,7 @@ public class ParkingLot extends AppCompatActivity implements RightItemClickListe
   public void RightOnClickA(View v, int pos) {
     rightClickedItem = RightList.get(pos);
     rightLastSelectedTime = System.currentTimeMillis();
+    isItemSelected = true;
     Log.d("OnClick", "Right RecyclerView clicked at position: " + pos);
     Toast.makeText(this, "Right RecyclerView: " + rightClickedItem.getParkingNum(), Toast.LENGTH_SHORT).show();
   }
@@ -109,27 +111,34 @@ public class ParkingLot extends AppCompatActivity implements RightItemClickListe
     nextButtonA.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(ParkingLot.this, CarParkDetailes.class);
-        intent.putExtra("CONTACT_ID", contactId);
-        intent.putExtra("CONTACT_COLOR", contactColor);
-        intent.putExtra("CONTACT_TYPE", contactType);
-        intent.putExtra("parkingSectionA", "A");
+        if (isItemSelected) {
+          Intent intent = new Intent(ParkingLot.this, CarParkDetailes.class);
+          intent.putExtra("CONTACT_ID", contactId);
+          intent.putExtra("CONTACT_COLOR", contactColor);
+          intent.putExtra("CONTACT_TYPE", contactType);
+          intent.putExtra("parkingSectionA", "A");
 
-        // Check which item was selected last
-        if (leftLastSelectedTime > rightLastSelectedTime) {
-          if (leftClickedItem != null) {
-            intent.putExtra("SELECTED_LEFT_ITEM", leftClickedItem.getParkingNum());
+          // Check which item was selected last
+          if (leftLastSelectedTime > rightLastSelectedTime) {
+            if (leftClickedItem != null) {
+              intent.putExtra("SELECTED_LEFT_ITEM", leftClickedItem.getParkingNum());
+            }
+          } else {
+            if (rightClickedItem != null) {
+              intent.putExtra("SELECTED_RIGHT_ITEM", rightClickedItem.getParkingNum());
+            }
           }
+
+          Log.d("ParkingLot", "CONTACT_ID: " + contactId);
+          Log.d("ParkingLot", "CONTACT_COLOR: " + contactColor);
+          Log.d("ParkingLot", "CONTACT_TYPE: " + contactType);
+          startActivity(intent);
+
         } else {
-          if (rightClickedItem != null) {
-            intent.putExtra("SELECTED_RIGHT_ITEM", rightClickedItem.getParkingNum());
-          }
+
+          Toast.makeText(ParkingLot.this, "Please select an item first", Toast.LENGTH_SHORT).show();
         }
 
-        Log.d("ParkingLot", "CONTACT_ID: " + contactId);
-        Log.d("ParkingLot", "CONTACT_COLOR: " + contactColor);
-        Log.d("ParkingLot", "CONTACT_TYPE: " + contactType);
-        startActivity(intent);
       }
     });
 
