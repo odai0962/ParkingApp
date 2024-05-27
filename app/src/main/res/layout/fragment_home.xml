@@ -110,6 +110,132 @@
                 android:orientation="horizontal"
                 android:scrollbars="horizontal" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/HorizontalRV"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/edit_text_border"
+                android:padding="16dp"
+                android:id="@+id/frameCarDetailes"
+                android:visibility="gone"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                   <RelativeLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Time remaining"
+                           android:textAlignment="center"
+                           android:textColor="@color/black"
+                           android:textSize="16sp"
+                           android:textStyle="bold"
+                           android:layout_marginTop="16dp"
+                           android:id="@+id/TimeRemainingText"
+                           android:layout_centerHorizontal="true"
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="00:00"
+                           android:textAlignment="center"
+                           android:textColor="@color/MainGreen"
+                           android:textSize="22sp"
+                           android:textStyle="bold"
+                           android:layout_marginTop="8dp"
+                           android:layout_below="@+id/TimeRemainingText"
+                           android:layout_centerHorizontal="true"
+                           android:id="@+id/TimeRemaining"
+                           />
+                   </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/relativecarmodel"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Time remaining"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="16dp"
+                            android:id="@+id/carmodelText"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2141531"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_below="@+id/carmodelText"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/carmodel"
+                            />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/parkinglotright"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/imageDetailes"
+                        android:layout_below="@+id/relativecarmodel"
+                        ></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking Num :"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/ParkingNum"
+                        android:layout_below="@+id/relativecarmodel"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C07"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@+id/ParkingNum"
+                        android:id="@+id/ParkingNumData"
+                        android:layout_below="@+id/relativecarmodel"
+                        />
+
+
+
+
+
+
+
+
+
+
+
+                </RelativeLayout>
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/emptyTextView"
                 android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -20,6 +21,7 @@ public class CarParkDetailes extends AppCompatActivity {
     RelativeLayout toTimePiker, fromTimePiker;
     TextView fromTime, toTime, parkingSetData, ParkingNumData;
     Button NextButtonDetailes;
+    ImageView backArrowCarParkDetailes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +96,14 @@ public class CarParkDetailes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(CarParkDetailes.this,TermsAndConditions.class );
+                startActivity(intent1);
+            }
+        });
+        backArrowCarParkDetailes = findViewById(R.id.backArrowCarParkDetailes);
+        backArrowCarParkDetailes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(CarParkDetailes.this,ParkingLot.class);
                 startActivity(intent1);
             }
         });

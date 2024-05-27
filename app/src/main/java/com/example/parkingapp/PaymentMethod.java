@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.parkingapp.databinding.ActivityPaymentMethodBinding;
@@ -30,6 +32,7 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
     private AddNewCardClickHandler clickHandler;
     private int selectedItemPosition = -1; // Track selected item position
     Button ButtonPayNow;
+    ImageView backArrowPaymentMethod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,15 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
                 cardModel.deleteContent(cardContent);
             }
         }).attachToRecyclerView(recyclerView);
+
+        backArrowPaymentMethod =findViewById(R.id.backArrowPaymentMethod);
+        backArrowPaymentMethod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PaymentMethod.this,TermsAndConditions.class);
+                startActivity(intent);
+            }
+        });
 
         ButtonPayNow = findViewById(R.id.ButtonPayNow);
         ButtonPayNow.setOnClickListener(new View.OnClickListener() {

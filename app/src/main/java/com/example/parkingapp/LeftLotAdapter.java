@@ -18,6 +18,7 @@ public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftView
     LeftItemClickListenerA clickListenerA;
     RightLotAdapter rightLotAdapter;
 
+
     private int selectedPosition = RecyclerView.NO_POSITION; // to keep track of the selected item position
 
     public void setLeftClickListenerA(LeftItemClickListenerA clickListenerA){
@@ -31,6 +32,7 @@ public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftView
     public void setRightLotAdapter(RightLotAdapter rightLotAdapter) {
         this.rightLotAdapter = rightLotAdapter;
     }
+
 
     @NonNull
     @Override
@@ -94,6 +96,7 @@ public class LeftLotAdapter extends RecyclerView.Adapter<LeftLotAdapter.LeftView
         }
 
     }
+
     public void resetSelection() {
         int previousPosition = selectedPosition;
         selectedPosition = RecyclerView.NO_POSITION;

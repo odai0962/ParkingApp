@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -141,6 +142,15 @@ public class ParkingLot extends AppCompatActivity implements RightItemClickListe
 
       }
     });
+    ImageView backArrowCarParkingLotA= findViewById(R.id.backArrowCarParkingLotA);
+    backArrowCarParkingLotA.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent1 = new Intent(ParkingLot.this,MainHomePage.class);
+      startActivity(intent1);
+      }
+    });
+
 
     rightLotAdapter.setRightClickListenerA(this);
     leftLotAdapter.setLeftClickListenerA(this);

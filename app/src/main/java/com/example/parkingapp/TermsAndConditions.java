@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 
 public class TermsAndConditions extends AppCompatActivity {
 
     private CheckBox checkBox;
     private Button buttonLetsPark;
+    ImageView backArrowTermsAndConditions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,14 @@ public class TermsAndConditions extends AppCompatActivity {
         buttonLetsPark.setOnClickListener(v -> {
             Intent intent = new Intent(TermsAndConditions.this, PaymentMethod.class);
             startActivity(intent);
+        });
+        backArrowTermsAndConditions = findViewById(R.id.backArrowTermsAndConditions);
+        backArrowTermsAndConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TermsAndConditions.this,CarParkDetailes.class);
+                startActivity(intent);
+            }
         });
     }
 }

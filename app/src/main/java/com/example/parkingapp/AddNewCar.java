@@ -48,7 +48,14 @@ public class AddNewCar extends AppCompatActivity {
                 finish();
             }
         });
-
+        backArrowAddNewCar = findViewById(R.id.backArrowAddNewCar);
+        backArrowAddNewCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddNewCar.this, MainHomePage.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
