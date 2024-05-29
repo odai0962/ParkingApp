@@ -1,6 +1,6 @@
 package com.example.parkingapp;
-import android.content.Intent;
 
+import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import com.example.parkingapp.databinding.FragmentHomeBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements ItemCarClickListener{
+public class HomeFragment extends Fragment implements ItemCarClickListener {
     private AddCarContactsDataBase carContactsDataBase;
     private ArrayList<AddCarContacts> addCarContactsArrayList = new ArrayList<>();
     private MyAdapter myAdapter;
@@ -33,16 +33,23 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
     private FragmentHomeClickHandler clickHandler;
     private TextView emptyTextView;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         View view = fragmentHomeBinding.getRoot();
 
         emptyTextView = view.findViewById(R.id.emptyTextView);
-
         clickHandler = new FragmentHomeClickHandler(getContext());
         fragmentHomeBinding.setClickHandler(clickHandler);
+
+        Bundle bundle = getArguments();
+        boolean message = bundle != null && bundle.getBoolean("odaizagha", false);
+        if (message) {
+            Toast.makeText(getContext(), "We are in the bundle: " + message, Toast.LENGTH_SHORT).show();
+            fragmentHomeBinding.frameCarDetailesA.setVisibility(View.VISIBLE);
+        } else {
+            fragmentHomeBinding.frameCarDetailesA.setVisibility(View.GONE);
+        }
 
         RecyclerView recyclerView = fragmentHomeBinding.HorizontalRV;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -62,7 +69,6 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
                 }
                 myAdapter.notifyDataSetChanged();
 
-                // Update visibility of TextView
                 if (addCarContacts.isEmpty()) {
                     emptyTextView.setVisibility(View.VISIBLE);
                 } else {
@@ -73,8 +79,6 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
 
         myAdapter = new MyAdapter(addCarContactsArrayList);
         recyclerView.setAdapter(myAdapter);
-
-
 
         myAdapter.setItemCarClickListener(this);
 
@@ -93,12 +97,11 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                addCarModel.deleteContact(c);
+                                new ViewModelProvider(HomeFragment.this).get(AddCarModel.class).deleteContact(c);
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                // User cancelled the dialog, so we need to notify the adapter to refresh the view
                                 myAdapter.notifyDataSetChanged();
                                 dialog.dismiss();
                             }
@@ -114,7 +117,6 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
     @Override
     public void onClick(View v, int position) {
         AddCarContacts clickedContact = addCarContactsArrayList.get(position);
-        // Assuming you have a ParkingLotActivity class
         Intent intent = new Intent(getContext(), ParkingLot.class);
         intent.putExtra("CONTACT_ID", clickedContact.getID());
         intent.putExtra("CONTACT_COLOR", clickedContact.getColor());
@@ -122,5 +124,4 @@ public class HomeFragment extends Fragment implements ItemCarClickListener{
 
         startActivity(intent);
     }
-
 }

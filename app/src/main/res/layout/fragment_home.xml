@@ -111,6 +111,7 @@
                 android:scrollbars="horizontal" />
 
             <FrameLayout
+                android:id="@+id/frameCarDetailesA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/HorizontalRV"
@@ -118,9 +119,9 @@
                 android:layout_marginHorizontal="16dp"
                 android:background="@drawable/edit_text_border"
                 android:padding="16dp"
-                android:id="@+id/frameCarDetailes"
                 android:visibility="gone"
                 >
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -243,13 +244,11 @@
                 android:layout_below="@id/HorizontalRV"
                 android:layout_centerHorizontal="true"
                 android:text="No Car found \n  Please Add You\'r Car"
-
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="18dp"
                 android:visibility="gone"
-                android:layout_marginTop="32dp"
-                />
+                android:layout_marginTop="32dp"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"

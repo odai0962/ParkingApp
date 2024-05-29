@@ -137,14 +137,19 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
         Button buttonNo = customDialogView.findViewById(R.id.dialogButtonNo);
 
         // Set click listeners for the buttons
+        // Inside PaymentMethod activity
         buttonYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(PaymentMethod.this, "Payment processing...", Toast.LENGTH_SHORT).show();
-                // Add more logic here for the payment process if needed
+                Intent intent = new Intent(PaymentMethod.this, MainHomePage.class);
+                intent.putExtra("buttonYes", true);
+                startActivity(intent);
                 dialog.dismiss();
             }
         });
+
+
 
         buttonNo.setOnClickListener(new View.OnClickListener() {
             @Override
