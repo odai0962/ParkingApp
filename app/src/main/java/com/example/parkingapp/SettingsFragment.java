@@ -27,8 +27,8 @@ public class SettingsFragment extends Fragment {
         relativeEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), EditProfile.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getActivity(), EditProfile.class);
+                startActivity(intent1);
             }
         });
 
@@ -39,7 +39,7 @@ public class SettingsFragment extends Fragment {
                 // Perform logout
                 FirebaseAuth.getInstance().signOut();
                 // Navigate to SignIn activity
-                Intent intent = new Intent(getContext(), SignIn.class);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear back stack
                 startActivity(intent);
             }

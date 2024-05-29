@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.parkingapp.databinding.ActivitySignInBinding;
@@ -24,12 +25,13 @@ public class SignIn extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseFirestore firestore;
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        binding = ActivitySignInBinding.inflate(getLayoutInflater());
+                binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         firestore =FirebaseFirestore.getInstance();
@@ -38,7 +40,13 @@ public class SignIn extends AppCompatActivity {
         progressDialog.setTitle("Create You'r  Account");
         progressDialog.setMessage("please Wait");
 
-
+          binding.backArrowSignIn.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent = new Intent(SignIn.this, MainActivity.class);
+                  startActivity(intent);
+              }
+          });
         binding.signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

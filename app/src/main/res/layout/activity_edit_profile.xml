@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".EditProfile">
+    tools:context=".EditProfile"
+    android:background="@color/white"
+    >
    <ImageView
        android:clickable="true"
        android:contentDescription="backArrowEditProfile"
@@ -37,7 +39,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/image_qasam"
+            android:src="@drawable/user"
             android:layout_marginTop="16dp"
             app:civ_border_width="1dp"
             android:id="@+id/profileimage"

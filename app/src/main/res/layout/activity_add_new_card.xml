@@ -15,7 +15,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddNewCard">
+        tools:context=".AddNewCard"
+
+        android:background="@color/white"
+        >
         <View
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -82,12 +85,35 @@
                     android:layout_marginTop="32dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/Grey"
+                    android:textSize="16sp"
+                    android:id="@+id/nameText"
+                    android:layout_below="@+id/CardNumber"
+                    />
+                <EditText
+                    android:text="@={addCardContent.cardName}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameText"
+                    android:padding="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Card Holder Name"
+                    android:id="@+id/Name"
+                    />
+
+                <TextView
+                    android:layout_marginTop="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="CVV"
                     android:textStyle="bold"
                     android:textColor="@color/Grey"
                     android:textSize="16sp"
                     android:id="@+id/CVVText"
-                    android:layout_below="@+id/CardNumber"
+                    android:layout_below="@+id/Name"
                     />
                 <EditText
                     android:text="@{addCardContent.CVVAsString}"
@@ -112,7 +138,7 @@
                     android:textColor="@color/Grey"
                     android:textSize="16sp"
                     android:id="@+id/ExpiryDateText"
-                    android:layout_below="@+id/CardNumber"
+                    android:layout_below="@+id/Name"
                     android:layout_alignParentEnd="true"
                     />
                 <EditText
@@ -124,34 +150,13 @@
                     android:paddingHorizontal="24dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edit_text_border"
-                    android:hint="16/01/2024"
+                    android:hint="02/24"
                     android:id="@+id/ExpiryDate"
                     android:inputType="date"
                     android:layout_alignParentEnd="true"
                     />
 
-                <TextView
-                    android:layout_marginTop="32dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textStyle="bold"
-                    android:textColor="@color/Grey"
-                    android:textSize="16sp"
-                    android:id="@+id/nameText"
-                    android:layout_below="@+id/CVV"
-                    />
-                <EditText
-                    android:text="@={addCardContent.cardName}"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameText"
-                    android:padding="16dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_text_border"
-                    android:hint="name in card"
-                    android:id="@+id/Name"
-                    />
+
             </RelativeLayout>
         </FrameLayout>
 

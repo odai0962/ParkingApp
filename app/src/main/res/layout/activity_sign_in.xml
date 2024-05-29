@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     android:background="@color/Goldenrod"
     tools:context=".SignIn">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@drawable/viewborder"
         android:id="@+id/view"
         ></View>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:contentDescription="backArrowSignIn"
+        android:padding="12dp"
+        android:id="@+id/backArrowSignIn"
+        android:src="@drawable/baseline_arrow_back_ios_new_24" />
     <ImageView
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
@@ -68,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/buttonborder1"
-                android:hint="Student ID"
+                android:hint="ID/Email "
                 android:textColorHint="@color/MainGreen"
                 android:padding="16dp"
                 android:id="@+id/ETSI"

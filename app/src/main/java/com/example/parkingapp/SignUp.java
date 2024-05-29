@@ -29,6 +29,15 @@ public class SignUp extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        binding.backArrowSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
