@@ -32,8 +32,8 @@ public class AddCardContent {
         this.userName = "";
         this.cardName = "";
         this.cardNumber = "";
-        this.CVV = 0;
-        this.expiryDate = 0;
+        this.CVV =0;
+        this.expiryDate=0 ;
     }
 
     public AddCardContent(String userName, String cardName, String cardNumber, int CVV, int expiryDate) {

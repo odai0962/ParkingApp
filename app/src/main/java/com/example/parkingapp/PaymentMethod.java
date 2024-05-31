@@ -59,16 +59,37 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                AddCardContent cardContent = cardContents.get(viewHolder.getAdapterPosition());
-                cardModel.deleteContent(cardContent);
+                int position = viewHolder.getAdapterPosition();
+                AddCardContent cardContent = cardContents.get(position);
+
+                // Show confirmation dialog
+                new AlertDialog.Builder(PaymentMethod.this)
+                        .setTitle("Delete Card")
+                        .setMessage("Are you sure you want to delete this card?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Delete the card
+                                cardModel.deleteContent(cardContent);
+                                cardContents.remove(position);
+                                cardAdapter.notifyItemRemoved(position);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Cancel the deletion and notify the adapter
+                                cardAdapter.notifyItemChanged(position);
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
             }
         }).attachToRecyclerView(recyclerView);
 
-        backArrowPaymentMethod =findViewById(R.id.backArrowPaymentMethod);
+        backArrowPaymentMethod = findViewById(R.id.backArrowPaymentMethod);
         backArrowPaymentMethod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PaymentMethod.this,TermsAndConditions.class);
+                Intent intent = new Intent(PaymentMethod.this, TermsAndConditions.class);
                 startActivity(intent);
             }
         });
@@ -148,8 +169,6 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
                 dialog.dismiss();
             }
         });
-
-
 
         buttonNo.setOnClickListener(new View.OnClickListener() {
             @Override
