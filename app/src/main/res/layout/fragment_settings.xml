@@ -273,7 +273,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Edit profile"
+                            android:text="Terms and Policies"
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textSize="16dp"

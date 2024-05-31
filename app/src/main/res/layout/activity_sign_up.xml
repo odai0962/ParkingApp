@@ -85,7 +85,9 @@
                     app:backgroundTint="@null"
                     android:backgroundTint="@null"
                     android:background="@drawable/cardborder"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    >
 
                     <EditText
                         android:layout_marginTop="32dp"
@@ -114,7 +116,7 @@
                         android:drawableStart="@drawable/baseline_phone"
                         android:drawablePadding="16dp"
                         android:inputType="number"
-                        android:layout_below="@+id/Fname"
+                        android:layout_below="@+id/editEmail"
                         android:layout_marginTop="16dp"
                         android:layout_marginHorizontal="16dp"
                         android:layout_width="match_parent"
@@ -129,7 +131,7 @@
                     <EditText
                         android:drawableStart="@drawable/baseline_email"
                         android:drawablePadding="16dp"
-                        android:layout_below="@+id/editPhone"
+                        android:layout_below="@+id/editStudentID"
                         android:layout_marginTop="16dp"
                         android:layout_marginHorizontal="16dp"
                         android:layout_width="match_parent"
@@ -141,10 +143,10 @@
                         android:padding="16dp"
                         android:id="@+id/editEmail" />
                     <EditText
-                        android:layout_below="@+id/editEmail"
+                        android:layout_below="@+id/Fname"
                         android:drawableStart="@drawable/baseline_perm_identity_24"
                         android:drawablePadding="16dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginHorizontal="16dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -158,7 +160,7 @@
                     <EditText
                         android:drawableStart="@drawable/baseline_lock_24"
                         android:drawablePadding="16dp"
-                        android:layout_below="@+id/editStudentID"
+                        android:layout_below="@+id/editPhone"
                         android:layout_marginTop="16dp"
                         android:layout_marginHorizontal="16dp"
                         android:layout_width="match_parent"
@@ -190,7 +192,7 @@
                         android:layout_below="@+id/editConfirmPassword"
 
                         android:layout_alignParentRight="true"
-                        android:layout_width="180dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:id="@+id/signUpNextButton"
@@ -201,22 +203,23 @@
                         android:background="@drawable/buttonborder1"
                         app:backgroundTint="@null"
                         android:backgroundTint="@null"
-                        android:layout_marginBottom="40dp"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginTop="75dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="50dp"
                         ></Button>
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:layout_below="@+id/signUpNextButton"
                        android:text="I Have Account"
-                       android:textSize="18sp"
-                       android:layout_centerHorizontal="true"
-                       android:textColor="@color/white"
+                       android:textSize="16sp"
+                      android:layout_centerHorizontal="true"
+                       android:textColor="@color/Cream"
                        android:clickable="true"
-                       android:layout_marginBottom="30dp"
+                       android:layout_margin="8dp"
                        android:id="@+id/nextLoginButton"
                        ></TextView>
+
 
                 </RelativeLayout>
 

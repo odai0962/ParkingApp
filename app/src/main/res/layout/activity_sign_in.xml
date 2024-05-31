@@ -71,7 +71,7 @@
             app:backgroundTint="@null"
             android:backgroundTint="@null"
             android:background="@drawable/cardborder"
-            android:layout_height="300dp">
+            android:layout_height="310dp">
 
             <EditText
                 android:drawableStart="@drawable/baseline_email"
@@ -118,17 +118,37 @@
                 app:backgroundTint="@null"
                 android:backgroundTint="@null"
                 ></Button>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+</RelativeLayout>
             <TextView
+                android:layout_marginTop="16dp"
                 android:padding="16dp"
                 android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Forget Password ?"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:textColor="@color/Cream"
-                android:id="@+id/ForgetPassword" />
+                android:id="@+id/ForgetPassword"
+                android:textSize="12sp"
+                android:layout_marginLeft="16dp"
+                />
+            <TextView
+                android:paddingVertical="16dp"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I don't Have Account"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/ForgetPassword"
+                android:textColor="@color/Cream"
+                android:textSize="12sp"
+                android:id="@+id/dontHaveAccount" />
+
+
 
 
 

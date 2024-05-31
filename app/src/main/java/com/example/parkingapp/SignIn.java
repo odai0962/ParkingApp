@@ -40,6 +40,17 @@ public class SignIn extends AppCompatActivity {
         progressDialog.setTitle("Create You'r  Account");
         progressDialog.setMessage("please Wait");
 
+        binding.dontHaveAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignIn.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
           binding.backArrowSignIn.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {

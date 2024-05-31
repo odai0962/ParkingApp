@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsFragment extends Fragment {
-    RelativeLayout relativeEditProfile;
+    RelativeLayout relativeEditProfile , relativeNotifications,Privacy,relativelanguage;
     RelativeLayout relativeLogout;
 
     @Override
@@ -22,6 +22,33 @@ public class SettingsFragment extends Fragment {
         // Find views by ID
         relativeEditProfile = view.findViewById(R.id.relativeEditProfile);
         relativeLogout = view.findViewById(R.id.relativeLogout);
+        relativeNotifications =view.findViewById(R.id.relativeNotifications);
+        Privacy= view.findViewById(R.id.Privacy);
+        relativelanguage = view.findViewById(R.id.relativelanguage);
+
+
+        relativelanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Language.class);
+                startActivity(intent);
+            }
+        });
+
+        Privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PrivacyPolicy.class);
+                startActivity(intent);
+            }
+        });
+        relativeNotifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Notifications.class);
+                startActivity(intent);
+            }
+        });
 
         // Set click listener for Edit Profile
         relativeEditProfile.setOnClickListener(new View.OnClickListener() {
