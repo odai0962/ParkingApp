@@ -73,7 +73,14 @@ public class CarParkDetailes extends AppCompatActivity {
         String currentTime = String.format("%02d:%02d", currentHour, currentMinute);
 
         fromTime.setText(currentTime);
-        toTime.setText(currentTime);
+
+        // Add one hour to the current time for the toTime
+        calendar.add(Calendar.HOUR_OF_DAY, 1);
+        int newHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int newMinute = calendar.get(Calendar.MINUTE);
+        String newTime = String.format("%02d:%02d", newHour, newMinute);
+
+        toTime.setText(newTime);
 
         fromTimePiker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +102,7 @@ public class CarParkDetailes extends AppCompatActivity {
         NextButtonDetailes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(CarParkDetailes.this,TermsAndConditions.class );
+                Intent intent1 = new Intent(CarParkDetailes.this, TermsAndConditions.class);
                 startActivity(intent1);
             }
         });
@@ -103,7 +110,7 @@ public class CarParkDetailes extends AppCompatActivity {
         backArrowCarParkDetailes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(CarParkDetailes.this,ParkingLot.class);
+                Intent intent1 = new Intent(CarParkDetailes.this, ParkingLot.class);
                 startActivity(intent1);
             }
         });
