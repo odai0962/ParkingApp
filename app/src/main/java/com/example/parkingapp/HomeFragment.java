@@ -47,8 +47,10 @@ public class HomeFragment extends Fragment implements ItemCarClickListener {
         if (message) {
             Toast.makeText(getContext(), "We are in the bundle: " + message, Toast.LENGTH_SHORT).show();
             fragmentHomeBinding.frameCarDetailesA.setVisibility(View.VISIBLE);
+            fragmentHomeBinding.HorizontalRV.setVisibility(View.GONE);
         } else {
             fragmentHomeBinding.frameCarDetailesA.setVisibility(View.GONE);
+            fragmentHomeBinding.HorizontalRV.setVisibility(View.VISIBLE);
         }
 
         RecyclerView recyclerView = fragmentHomeBinding.HorizontalRV;
