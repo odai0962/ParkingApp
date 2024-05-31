@@ -36,11 +36,7 @@ public class CarParkDetailes extends AppCompatActivity {
         String parkingSection = intent.getStringExtra("parkingSectionA");
         String selectedLeftItem = intent.getStringExtra("SELECTED_LEFT_ITEM");
         String selectedRightItem = intent.getStringExtra("SELECTED_RIGHT_ITEM");
-        Log.d("CarParkDetailes", "CONTACT_ID: " + contactId);
-        Log.d("CarParkDetailes", "CONTACT_COLOR: " + contactColor);
-        Log.d("CarParkDetailes", "CONTACT_TYPE: " + contactType);
-        Log.d("CarParkDetailes", "SELECTED_LEFT_ITEM: " + selectedLeftItem);
-        Log.d("CarParkDetailes", "SELECTED_RIGHT_ITEM: " + selectedRightItem);
+
 
         carModel = findViewById(R.id.carModel);
         carModel.setText(contactType);
