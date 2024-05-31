@@ -1,14 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArchiveFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ArchiveFragment"
+    android:background="@color/MainGreen"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="200dp"
+        android:background="@drawable/homeborder" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/baseline_person_24"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="1dp" />
+    <ImageView
+        android:id="@+id/notificationButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:contentDescription="notification"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/baseline_notifications_none_24" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_border"
+        android:backgroundTint="@null"
+        android:layout_marginHorizontal="16dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parking set : "
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:id="@+id/ParkingSet"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textSize="14sp"
+                android:textColor="@color/MainGreen"
+                android:id="@+id/A"
+                android:layout_toRightOf="@+id/ParkingSet"
+                />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" date : "
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:id="@+id/date"
+                android:layout_toLeftOf="@+id/dateData"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5/31/2024"
+                android:textSize="14sp"
+                android:textColor="@color/MainGreen"
+                android:id="@+id/dateData"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/ParkingSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parking Num :"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:id="@+id/ParkingNum"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A07"
+                android:textSize="14sp"
+                android:textColor="@color/MainGreen"
+                android:id="@+id/ParkingNumData"
+                android:layout_toRightOf="@+id/ParkingNum"
+                android:layout_below="@+id/ParkingSet"
+                />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  amount paid :"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:id="@+id/amountPaid"
+                android:layout_toLeftOf="@+id/amountPaidData"
+                android:layout_below="@+id/date"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1JD"
+                android:textSize="14sp"
+                android:textColor="@color/Red"
+                android:id="@+id/amountPaidData"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/date"
+                />
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From :12:00am   To :15:00am"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:id="@+id/FromTo"
+               android:layout_centerHorizontal="true"
+                android:layout_below="@+id/amountPaidData"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
