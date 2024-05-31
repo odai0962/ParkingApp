@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TermsAndConditions">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@drawable/parkinglotborder"
-        android:id="@+id/view"
-        />
+        android:id="@+id/view" />
 
     <ImageView
         android:layout_width="50dp"
@@ -24,6 +24,7 @@
         android:padding="12dp"
         android:id="@+id/backArrowTermsAndConditions"
         android:src="@drawable/baseline_arrow_back_ios_new_24" />
+
     <TextView
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
@@ -33,8 +34,8 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
-        android:id="@+id/TextTermsAndConditions"
-        />
+        android:id="@+id/TextTermsAndConditions" />
+
     <FrameLayout
         android:layout_margin="16dp"
         android:layout_width="match_parent"
@@ -42,59 +43,116 @@
         android:layout_below="@+id/view"
         android:layout_above="@+id/frameLetsPark"
         android:background="@color/lightGrey"
-        android:padding="16dp"
-        >
+        android:padding="16dp">
 
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-           <TextView
-               android:layout_marginTop="16dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="if the car is left in the parking lot for more than 12 hours , an additional fee will be paid as rent for another day."
-               android:textStyle="bold"
-               android:textSize="18sp"
-               android:textColor="@color/black"
-               android:id="@+id/Terms1"
-               />
-           <TextView
-               android:layout_marginTop="32dp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="if the car is left in the parking lot for more than 12 hours , an additional fee will be paid as rent for another day."
-               android:textStyle="bold"
-               android:textSize="18sp"
-               android:textColor="@color/black"
-               android:id="@+id/Terms2"
-               android:layout_below="@+id/Terms1"
-               />
-           <CheckBox
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Read &amp; Accept"
-               android:layout_alignParentBottom="true"
-               android:layout_alignParentEnd="true"
-               android:id="@+id/checkedBox"
-           />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-       </RelativeLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/checkedBox"
+                android:id="@+id/scrollViewTerms">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="If the car remains in the parking lot for more than 12 hours, an additional fee will be charged as rent for another day."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms1" />
+
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All information provided during registration must be accurate, current, and complete. Providing false or misleading information may result in the denial or revocation of your parking privileges."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms2"
+                        android:layout_below="@+id/Terms1" />
+
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Only current students, faculty, staff, and authorized visitors of FET Campus are eligible to register."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms3"
+                        android:layout_below="@+id/Terms2" />
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You are responsible for maintaining the confidentiality of your account credentials."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms4"
+                        android:layout_below="@+id/Terms3" />
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You must comply with all parking regulations, including designated parking areas, speed limits, and posted signs."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms5"
+                        android:layout_below="@+id/Terms4" />
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Violations may result in fines, towing at your expense, or revocation of parking privileges."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms6"
+                        android:layout_below="@+id/Terms5" />
+                    <TextView
+                        android:layout_marginTop="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parking on campus is at your own risk. FET Campus is not responsible for damage or theft of vehicles."
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:id="@+id/Terms7"
+                        android:layout_below="@+id/Terms6" />
+
+                </RelativeLayout>
+            </ScrollView>
+
+            <CheckBox
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read &amp; Accept"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/checkedBox" />
+        </RelativeLayout>
     </FrameLayout>
-
-
 
     <FrameLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blackt"
-        android:id="@+id/frameLetsPark"
-
-        >
+        android:background="@color/black"
+        android:id="@+id/frameLetsPark">
 
         <Button
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="let’s park"
@@ -105,7 +163,6 @@
             android:layout_marginVertical="8dp"
             android:background="@drawable/nextborder"
             android:backgroundTint="@null"
-            app:backgroundTint="@null"
-            />
+            app:backgroundTint="@null" />
     </FrameLayout>
 </RelativeLayout>
