@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,6 +25,14 @@ public class TermsAndConditions extends AppCompatActivity {
         checkBox = findViewById(R.id.checkedBox);
         buttonLetsPark = findViewById(R.id.ButtonLetsPark);
 
+
+
+        Intent intent = getIntent();
+       String timeDifference = intent.getStringExtra("timeDifference");
+       String selectedItem  = intent.getStringExtra("selectedItem");
+
+
+
         // Initially disable the button
         buttonLetsPark.setEnabled(false);
 
@@ -37,8 +46,10 @@ public class TermsAndConditions extends AppCompatActivity {
 
         // Add a listener to the button to handle its click event
         buttonLetsPark.setOnClickListener(v -> {
-            Intent intent = new Intent(TermsAndConditions.this, PaymentMethod.class);
-            startActivity(intent);
+            Intent intent1 = new Intent(TermsAndConditions.this, PaymentMethod.class);
+            intent.putExtra("timeDifference",timeDifference);
+            intent.putExtra("selectedItem",selectedItem);
+            startActivity(intent1);
         });
         backArrowTermsAndConditions = findViewById(R.id.backArrowTermsAndConditions);
         backArrowTermsAndConditions.setOnClickListener(new View.OnClickListener() {

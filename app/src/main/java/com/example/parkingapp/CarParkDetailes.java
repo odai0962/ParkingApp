@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class CarParkDetailes extends AppCompatActivity {
     TextView carModel, carColor, carId;
@@ -22,6 +23,7 @@ public class CarParkDetailes extends AppCompatActivity {
     TextView fromTime, toTime, parkingSetData, ParkingNumData;
     Button NextButtonDetailes;
     ImageView backArrowCarParkDetailes;
+    String timeDifference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,6 @@ public class CarParkDetailes extends AppCompatActivity {
         String parkingSection = intent.getStringExtra("parkingSectionA");
         String selectedLeftItem = intent.getStringExtra("SELECTED_LEFT_ITEM");
         String selectedRightItem = intent.getStringExtra("SELECTED_RIGHT_ITEM");
-
 
         carModel = findViewById(R.id.carModel);
         carModel.setText(contactType);
@@ -66,7 +67,7 @@ public class CarParkDetailes extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         int currentMinute = calendar.get(Calendar.MINUTE);
-        String currentTime = String.format("%02d:%02d", currentHour, currentMinute);
+        String currentTime = String.format(Locale.getDefault(), "%02d:%02d", currentHour, currentMinute);
 
         fromTime.setText(currentTime);
 
@@ -74,7 +75,7 @@ public class CarParkDetailes extends AppCompatActivity {
         calendar.add(Calendar.HOUR_OF_DAY, 1);
         int newHour = calendar.get(Calendar.HOUR_OF_DAY);
         int newMinute = calendar.get(Calendar.MINUTE);
-        String newTime = String.format("%02d:%02d", newHour, newMinute);
+        String newTime = String.format(Locale.getDefault(), "%02d:%02d", newHour, newMinute);
 
         toTime.setText(newTime);
 
@@ -99,6 +100,12 @@ public class CarParkDetailes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(CarParkDetailes.this, TermsAndConditions.class);
+                intent1.putExtra("timeDifference",timeDifference);
+                if (selectedRightItem != null) {
+                  intent1.putExtra("selectedItem",selectedRightItem);
+                } else if (selectedLeftItem != null) {
+                    intent1.putExtra("selectedItem",selectedLeftItem);
+                }
                 startActivity(intent1);
             }
         });
@@ -121,11 +128,12 @@ public class CarParkDetailes extends AppCompatActivity {
         TimePickerDialog pickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hour, int minutes) {
-                String selectedTime = String.format("%02d:%02d", hour, minutes);
+                String selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hour, minutes);
                 if (selectedTime.equals(toTime.getText().toString())) {
                     Toast.makeText(CarParkDetailes.this, "From time cannot be equal to To time", Toast.LENGTH_SHORT).show();
                 } else {
                     fromTime.setText(selectedTime);
+                    calculateTimeDifference();
                 }
             }
         }, currentHour, currentMinute, true);
@@ -142,7 +150,7 @@ public class CarParkDetailes extends AppCompatActivity {
         TimePickerDialog pickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hour, int minutes) {
-                String selectedTime = String.format("%02d:%02d", hour, minutes);
+                String selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hour, minutes);
                 if (selectedTime.equals(fromTime.getText().toString())) {
                     Toast.makeText(CarParkDetailes.this, "To time cannot be equal to From time", Toast.LENGTH_SHORT).show();
                     // Reset the ToTime to prevent selection of equal times
@@ -160,13 +168,13 @@ public class CarParkDetailes extends AppCompatActivity {
                 }
                 toTime.setText(selectedTime);
                 toTime.setTextColor(getResources().getColor(android.R.color.black)); // Reset text color
+                calculateTimeDifference();
             }
         }, currentHour, currentMinute, true);
         pickerDialog.show();
         Log.d("CarParkDetailes", "ToTimeDialog shown");
     }
 
-    // Helper method to check if ToTime is less than FromTime
     private boolean isToTimeLessThanFromTime(int selectedHour, int selectedMinute) {
         String[] fromTimeArray = fromTime.getText().toString().split(":");
         int fromHour = Integer.parseInt(fromTimeArray[0]);
@@ -178,5 +186,25 @@ public class CarParkDetailes extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    private void calculateTimeDifference() {
+        String[] fromTimeArray = fromTime.getText().toString().split(":");
+        String[] toTimeArray = toTime.getText().toString().split(":");
+
+        int fromHour = Integer.parseInt(fromTimeArray[0]);
+        int fromMinute = Integer.parseInt(fromTimeArray[1]);
+        int toHour = Integer.parseInt(toTimeArray[0]);
+        int toMinute = Integer.parseInt(toTimeArray[1]);
+
+        int fromTotalMinutes = fromHour * 60 + fromMinute;
+        int toTotalMinutes = toHour * 60 + toMinute;
+
+        int differenceInMinutes = toTotalMinutes - fromTotalMinutes;
+        int diffHours = differenceInMinutes / 60;
+        int diffMinutes = differenceInMinutes % 60;
+
+        timeDifference = String.format(Locale.getDefault(), "%02d:%02d", diffHours, diffMinutes);
+        Log.d("CarParkDetailes", "Time Difference: " + timeDifference);
     }
 }

@@ -50,6 +50,12 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
         cardAdapter.setClickListener(this);
         recyclerView.setAdapter(cardAdapter);
 
+
+
+
+
+
+
         AddCardModel cardModel = new ViewModelProvider(this).get(AddCardModel.class);
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             @Override
@@ -142,6 +148,11 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
     }
 
     private void showPayNowDialog() {
+
+        Intent intent1 = getIntent();
+        String timeDifference = intent1.getStringExtra("timeDifference");
+        String selectedItem  = intent1.getStringExtra("selectedItem");
+
         // Inflate custom layout
         LayoutInflater inflater = LayoutInflater.from(this);
         View customDialogView = inflater.inflate(R.layout.dialog_custom, null);
@@ -165,6 +176,8 @@ public class PaymentMethod extends AppCompatActivity implements itemCardClickLis
                 Toast.makeText(PaymentMethod.this, "Payment processing...", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(PaymentMethod.this, MainHomePage.class);
                 intent.putExtra("buttonYes", true);
+                intent.putExtra("timeDifference",timeDifference);
+                intent.putExtra("selectedItem",selectedItem);
                 startActivity(intent);
                 dialog.dismiss();
             }

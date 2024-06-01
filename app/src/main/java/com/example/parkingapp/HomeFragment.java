@@ -43,14 +43,25 @@ public class HomeFragment extends Fragment implements ItemCarClickListener {
         fragmentHomeBinding.setClickHandler(clickHandler);
 
         Bundle bundle = getArguments();
-        boolean message = bundle != null && bundle.getBoolean("odaizagha", false);
-        if (message) {
-            Toast.makeText(getContext(), "We are in the bundle: " + message, Toast.LENGTH_SHORT).show();
-            fragmentHomeBinding.frameCarDetailesA.setVisibility(View.VISIBLE);
-            fragmentHomeBinding.HorizontalRV.setVisibility(View.GONE);
-        } else {
-            fragmentHomeBinding.frameCarDetailesA.setVisibility(View.GONE);
-            fragmentHomeBinding.HorizontalRV.setVisibility(View.VISIBLE);
+        if (bundle != null) {
+            boolean message = bundle.getBoolean("odaizagha", false);
+            String timeDifference = bundle.getString("timeDifference", "");
+            String selectedItem = bundle.getString("selectedItem", "");
+
+
+            if (message) {
+                Toast.makeText(getContext(), "We are in the bundle: " + message, Toast.LENGTH_SHORT).show();
+                fragmentHomeBinding.frameCarDetailesA.setVisibility(View.VISIBLE);
+                fragmentHomeBinding.HorizontalRV.setVisibility(View.GONE);
+                
+            } else {
+                fragmentHomeBinding.frameCarDetailesA.setVisibility(View.GONE);
+                fragmentHomeBinding.HorizontalRV.setVisibility(View.VISIBLE);
+            }
+
+            // Use timeDifference and selectedItem as needed in your fragment
+            Log.d("HomeFragment", "Time Difference: " + timeDifference);
+            Log.d("HomeFragment", "Selected Item: " + selectedItem);
         }
 
         RecyclerView recyclerView = fragmentHomeBinding.HorizontalRV;

@@ -44,6 +44,9 @@ public class MainHomePage extends AppCompatActivity {
 
         Intent intent = getIntent();
         Boolean message = intent.getBooleanExtra("buttonYes", false);
+        String timeDifference = intent.getStringExtra("timeDifference");
+        String selectedItem  = intent.getStringExtra("selectedItem");
+
 
         if (message) {
             reloadHomeFragment();
@@ -66,12 +69,20 @@ public class MainHomePage extends AppCompatActivity {
     private void reloadHomeFragment() {
         HomeFragment homeFragment = new HomeFragment();
         Bundle bundle = new Bundle();
+
         Boolean message = getIntent().getBooleanExtra("buttonYes", false);
+        String timeDifference = getIntent().getStringExtra("timeDifference");
+        String selectedItem = getIntent().getStringExtra("selectedItem");
+
         bundle.putBoolean("odaizagha", message);
+        bundle.putString("timeDifference", timeDifference);
+        bundle.putString("selectedItem", selectedItem);
+
         homeFragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, homeFragment)
                 .commit();
     }
+
 }

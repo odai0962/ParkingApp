@@ -55,11 +55,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5"
+                    android:text="139"
                     android:id="@+id/parkingNum"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:textColor="@color/Red"
+                    android:textColor="@color/MainGreen"
 
                     android:textSize="18sp"
                     android:layout_toRightOf="@+id/carimage"
@@ -69,12 +69,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5 parking left"
+                    android:text="  Parking left"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:layout_toRightOf="@+id/carimage"
+                    android:layout_toRightOf="@+id/parkingNum"
                     android:layout_below="@+id/carmodeltext"
                     android:layout_marginTop="8dp"
                     ></TextView>
